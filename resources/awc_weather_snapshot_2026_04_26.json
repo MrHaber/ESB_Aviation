@@ -1,0 +1,1054 @@
+﻿{
+    "source":  "NOAA Aviation Weather Center Data API",
+    "captured_at":  "2026-04-26T10:30:55.4937606Z",
+    "metar":  [
+                  {
+                      "icaoId":  "ULLI",
+                      "receiptTime":  "2026-04-26T10:21:28.661Z",
+                      "obsTime":  1777198860,
+                      "reportTime":  "2026-04-26T10:21:00.000Z",
+                      "temp":  1,
+                      "dewp":  -1,
+                      "wdir":  330,
+                      "wspd":  12,
+                      "wgst":  21,
+                      "visib":  0.87,
+                      "altim":  990,
+                      "qcField":  16,
+                      "wxString":  "SHSN",
+                      "metarType":  "SPECI",
+                      "rawOb":  "SPECI ULLI 261021Z 33006G11MPS 300V010 1400 1300NE R28L/1600U R28R/1400D SHSN BKN006 BKN018CB 01/M01 Q0990 R88/290050 NOSIG RMK OBST OBSC",
+                      "lat":  59.798,
+                      "lon":  30.267,
+                      "elev":  25,
+                      "name":  "St Petersburg/Pulkovo Arpt, LE, RU",
+                      "cover":  "BKN",
+                      "clouds":  [
+                                     {
+                                         "cover":  "BKN",
+                                         "base":  600
+                                     },
+                                     {
+                                         "cover":  "BKN",
+                                         "base":  1800
+                                     }
+                                 ],
+                      "fltCat":  "LIFR"
+                  },
+                  {
+                      "icaoId":  "EDDF",
+                      "receiptTime":  "2026-04-26T10:23:18.372Z",
+                      "obsTime":  1777198800,
+                      "reportTime":  "2026-04-26T10:20:00.000Z",
+                      "temp":  14,
+                      "dewp":  1,
+                      "wdir":  50,
+                      "wspd":  7,
+                      "visib":  "6+",
+                      "altim":  1024,
+                      "qcField":  18,
+                      "metarType":  "METAR",
+                      "rawOb":  "METAR EDDF 261020Z AUTO 05007KT 010V100 CAVOK 14/01 Q1024 NOSIG",
+                      "lat":  50.045,
+                      "lon":  8.598,
+                      "elev":  113,
+                      "name":  "Frankfurt/Main Arpt, HE, DE",
+                      "cover":  "CAVOK",
+                      "clouds":  [
+
+                                 ],
+                      "fltCat":  "VFR"
+                  },
+                  {
+                      "icaoId":  "UUDD",
+                      "receiptTime":  "2026-04-26T10:16:27.575Z",
+                      "obsTime":  1777198560,
+                      "reportTime":  "2026-04-26T10:16:00.000Z",
+                      "temp":  7,
+                      "dewp":  6,
+                      "wdir":  280,
+                      "wspd":  14,
+                      "wgst":  23,
+                      "visib":  2.8,
+                      "altim":  993,
+                      "qcField":  16,
+                      "wxString":  "-SHRA",
+                      "metarType":  "SPECI",
+                      "rawOb":  "SPECI UUDD 261016Z 28007G12MPS 4500 -SHRA BKN030CB 07/06 Q0993 R31L/290045 NOSIG",
+                      "lat":  55.409,
+                      "lon":  37.906,
+                      "elev":  165,
+                      "name":  "Moscow/Domodedovo Arpt, MO, RU",
+                      "cover":  "BKN",
+                      "clouds":  [
+                                     {
+                                         "cover":  "BKN",
+                                         "base":  3000
+                                     }
+                                 ],
+                      "fltCat":  "IFR"
+                  },
+                  {
+                      "icaoId":  "LEMD",
+                      "receiptTime":  "2026-04-26T10:04:16.422Z",
+                      "obsTime":  1777197600,
+                      "reportTime":  "2026-04-26T10:00:00.000Z",
+                      "temp":  21,
+                      "dewp":  10,
+                      "wdir":  90,
+                      "wspd":  2,
+                      "visib":  "6+",
+                      "altim":  1019,
+                      "qcField":  16,
+                      "metarType":  "METAR",
+                      "rawOb":  "METAR LEMD 261000Z 09002KT CAVOK 21/10 Q1019 NOSIG",
+                      "lat":  40.466,
+                      "lon":  -3.555,
+                      "elev":  589,
+                      "name":  "Madrid/Barajas Arpt, M, ES",
+                      "cover":  "CAVOK",
+                      "clouds":  [
+
+                                 ],
+                      "fltCat":  "VFR"
+                  },
+                  {
+                      "icaoId":  "URSS",
+                      "receiptTime":  "2026-04-26T10:06:09.095Z",
+                      "obsTime":  1777197600,
+                      "reportTime":  "2026-04-26T10:00:00.000Z",
+                      "temp":  22,
+                      "dewp":  1,
+                      "wdir":  210,
+                      "wspd":  6,
+                      "visib":  "6+",
+                      "altim":  1012,
+                      "qcField":  16,
+                      "metarType":  "METAR",
+                      "rawOb":  "METAR URSS 261000Z 21003MPS 140V230 9999 NSC 22/01 Q1012 R02/010070 R06/010070 NOSIG RMK R06/23003G06MPS QFE758",
+                      "lat":  43.438,
+                      "lon":  39.926,
+                      "elev":  4,
+                      "name":  "Sochi Intl, KD, RU",
+                      "cover":  "CLR",
+                      "clouds":  [
+
+                                 ],
+                      "fltCat":  "VFR"
+                  },
+                  {
+                      "icaoId":  "UUEE",
+                      "receiptTime":  "2026-04-26T10:06:10.767Z",
+                      "obsTime":  1777197600,
+                      "reportTime":  "2026-04-26T10:00:00.000Z",
+                      "temp":  9,
+                      "dewp":  5,
+                      "wdir":  250,
+                      "wspd":  10,
+                      "visib":  "6+",
+                      "altim":  992,
+                      "qcField":  16,
+                      "metarType":  "METAR",
+                      "rawOb":  "METAR UUEE 261000Z 25005MPS 9999 SCT011 09/05 Q0992 R24L/290145 R24C/290145 NOSIG",
+                      "lat":  55.973,
+                      "lon":  37.415,
+                      "elev":  186,
+                      "name":  "Moscow/Sheremetyevo Intl, MO, RU",
+                      "cover":  "SCT",
+                      "clouds":  [
+                                     {
+                                         "cover":  "SCT",
+                                         "base":  1100
+                                     }
+                                 ],
+                      "fltCat":  "VFR"
+                  }
+              ],
+    "taf":  [
+                {
+                    "icaoId":  "UUEE",
+                    "dbPopTime":  "2026-04-26T10:25:50.330Z",
+                    "bulletinTime":  "2026-04-26T08:00:00.000Z",
+                    "issueTime":  "2026-04-26T10:25:00.000Z",
+                    "validTimeFrom":  1777197600,
+                    "validTimeTo":  1777280400,
+                    "rawTAF":  "TAF AMD UUEE 261025Z 2610/2709 25007G13MPS 8000 FEW008 OVC016 TX09/2612Z TN00/2701Z TEMPO 2610/2620 32010G18MPS 2500 -SHRA BKN016CB TEMPO 2620/2708 26009G18MPS 1200 SHSNRA BKN004 BKN016CB BECMG 2708/2709 27011G18MPS",
+                    "mostRecent":  1,
+                    "remarks":  "",
+                    "lat":  55.973,
+                    "lon":  37.415,
+                    "elev":  186,
+                    "prior":  0,
+                    "name":  "Moscow/Sheremetyevo Intl",
+                    "fcsts":  [
+                                  {
+                                      "timeFrom":  1777197600,
+                                      "timeTo":  1777276800,
+                                      "timeBec":  null,
+                                      "fcstChange":  null,
+                                      "probability":  null,
+                                      "wdir":  250,
+                                      "wspd":  14,
+                                      "wgst":  25,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  4.97,
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  null,
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "FEW",
+                                                         "base":  800,
+                                                         "type":  null
+                                                     },
+                                                     {
+                                                         "cover":  "OVC",
+                                                         "base":  1600,
+                                                         "type":  null
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  },
+                                  {
+                                      "timeFrom":  1777197600,
+                                      "timeTo":  1777233600,
+                                      "timeBec":  null,
+                                      "fcstChange":  "TEMPO",
+                                      "probability":  null,
+                                      "wdir":  320,
+                                      "wspd":  19,
+                                      "wgst":  35,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  1.55,
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  "-SHRA",
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "BKN",
+                                                         "base":  1600,
+                                                         "type":  "CB"
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  },
+                                  {
+                                      "timeFrom":  1777233600,
+                                      "timeTo":  1777276800,
+                                      "timeBec":  null,
+                                      "fcstChange":  "TEMPO",
+                                      "probability":  null,
+                                      "wdir":  260,
+                                      "wspd":  17,
+                                      "wgst":  35,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  0.75,
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  "SHSN SHRA",
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "BKN",
+                                                         "base":  400,
+                                                         "type":  null
+                                                     },
+                                                     {
+                                                         "cover":  "BKN",
+                                                         "base":  1600,
+                                                         "type":  "CB"
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  },
+                                  {
+                                      "timeFrom":  1777276800,
+                                      "timeTo":  1777280400,
+                                      "timeBec":  1777280400,
+                                      "fcstChange":  "BECMG",
+                                      "probability":  null,
+                                      "wdir":  270,
+                                      "wspd":  21,
+                                      "wgst":  35,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  4.97,
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  null,
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "FEW",
+                                                         "base":  800,
+                                                         "type":  null
+                                                     },
+                                                     {
+                                                         "cover":  "OVC",
+                                                         "base":  1600,
+                                                         "type":  null
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  }
+                              ]
+                },
+                {
+                    "icaoId":  "ULLI",
+                    "dbPopTime":  "2026-04-26T10:02:54.981Z",
+                    "bulletinTime":  "2026-04-26T08:00:00.000Z",
+                    "issueTime":  "2026-04-26T10:02:00.000Z",
+                    "validTimeFrom":  1777197600,
+                    "validTimeTo":  1777280400,
+                    "rawTAF":  "TAF AMD ULLI 261002Z 2610/2709 33006G13MPS 1800 SHSN BKN005 BKN016CB TEMPO 2610/2617 35010G17MPS 0700 +SHSNRA BKN007 BKN016CB PROB40 2610/2617 0500 +SHSN FZRA BKN010 BKN016CB BECMG 2617/2619 6000 NSW BKN016 TEMPO 2620/2704 1500 SHSN BLSN BKN008 BKN016CB TEMPO 2707/2709 35010G17MPS",
+                    "mostRecent":  1,
+                    "remarks":  "",
+                    "lat":  59.798,
+                    "lon":  30.267,
+                    "elev":  25,
+                    "prior":  1,
+                    "name":  "St Petersburg/Pulkovo Arpt",
+                    "fcsts":  [
+                                  {
+                                      "timeFrom":  1777197600,
+                                      "timeTo":  1777222800,
+                                      "timeBec":  null,
+                                      "fcstChange":  null,
+                                      "probability":  null,
+                                      "wdir":  330,
+                                      "wspd":  12,
+                                      "wgst":  25,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  1.12,
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  "SHSN",
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "BKN",
+                                                         "base":  500,
+                                                         "type":  null
+                                                     },
+                                                     {
+                                                         "cover":  "BKN",
+                                                         "base":  1600,
+                                                         "type":  "CB"
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  },
+                                  {
+                                      "timeFrom":  1777197600,
+                                      "timeTo":  1777222800,
+                                      "timeBec":  null,
+                                      "fcstChange":  "TEMPO",
+                                      "probability":  null,
+                                      "wdir":  350,
+                                      "wspd":  19,
+                                      "wgst":  33,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  0.43,
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  "+SHSN +SHRA",
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "BKN",
+                                                         "base":  700,
+                                                         "type":  null
+                                                     },
+                                                     {
+                                                         "cover":  "BKN",
+                                                         "base":  1600,
+                                                         "type":  "CB"
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  },
+                                  {
+                                      "timeFrom":  1777197600,
+                                      "timeTo":  1777222800,
+                                      "timeBec":  null,
+                                      "fcstChange":  "PROB",
+                                      "probability":  40,
+                                      "wdir":  null,
+                                      "wspd":  null,
+                                      "wgst":  null,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  0.31,
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  "+SHSN FZRA",
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "BKN",
+                                                         "base":  1000,
+                                                         "type":  null
+                                                     },
+                                                     {
+                                                         "cover":  "BKN",
+                                                         "base":  1600,
+                                                         "type":  "CB"
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  },
+                                  {
+                                      "timeFrom":  1777222800,
+                                      "timeTo":  1777280400,
+                                      "timeBec":  1777230000,
+                                      "fcstChange":  "BECMG",
+                                      "probability":  null,
+                                      "wdir":  330,
+                                      "wspd":  12,
+                                      "wgst":  25,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  3.73,
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  "NSW",
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "BKN",
+                                                         "base":  1600,
+                                                         "type":  null
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  },
+                                  {
+                                      "timeFrom":  1777233600,
+                                      "timeTo":  1777262400,
+                                      "timeBec":  null,
+                                      "fcstChange":  "TEMPO",
+                                      "probability":  null,
+                                      "wdir":  null,
+                                      "wspd":  null,
+                                      "wgst":  null,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  0.93,
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  "SHSN BLSN",
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "BKN",
+                                                         "base":  800,
+                                                         "type":  null
+                                                     },
+                                                     {
+                                                         "cover":  "BKN",
+                                                         "base":  1600,
+                                                         "type":  "CB"
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  },
+                                  {
+                                      "timeFrom":  1777273200,
+                                      "timeTo":  1777280400,
+                                      "timeBec":  null,
+                                      "fcstChange":  "TEMPO",
+                                      "probability":  null,
+                                      "wdir":  350,
+                                      "wspd":  19,
+                                      "wgst":  33,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  "",
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  null,
+                                      "notDecoded":  null,
+                                      "clouds":  [
+
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  }
+                              ]
+                },
+                {
+                    "icaoId":  "UUDD",
+                    "dbPopTime":  "2026-04-26T09:13:57.835Z",
+                    "bulletinTime":  "2026-04-26T08:00:00.000Z",
+                    "issueTime":  "2026-04-26T09:13:00.000Z",
+                    "validTimeFrom":  1777194000,
+                    "validTimeTo":  1777302000,
+                    "rawTAF":  "TAF AMD UUDD 260913Z 2609/2715 20006G12MPS 6000 FEW009 BKN016 TX09/2609Z TN00/2703Z TEMPO 2609/2613 26008G15MPS 2500 -SHRA BKN016CB BECMG 2616/2618 34008G13MPS BKN008 TEMPO 2621/2706 30012G18MPS 1000 SHSN BKN005 BKN016CB BECMG 2706/2707 28009G15MPS BKN016 TEMPO 2707/2715 28014G20MPS",
+                    "mostRecent":  1,
+                    "remarks":  "",
+                    "lat":  55.409,
+                    "lon":  37.906,
+                    "elev":  165,
+                    "prior":  5,
+                    "name":  "Moscow/Domodedovo Arpt",
+                    "fcsts":  [
+                                  {
+                                      "timeFrom":  1777194000,
+                                      "timeTo":  1777219200,
+                                      "timeBec":  null,
+                                      "fcstChange":  null,
+                                      "probability":  null,
+                                      "wdir":  200,
+                                      "wspd":  12,
+                                      "wgst":  23,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  3.73,
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  null,
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "FEW",
+                                                         "base":  900,
+                                                         "type":  null
+                                                     },
+                                                     {
+                                                         "cover":  "BKN",
+                                                         "base":  1600,
+                                                         "type":  null
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  },
+                                  {
+                                      "timeFrom":  1777194000,
+                                      "timeTo":  1777208400,
+                                      "timeBec":  null,
+                                      "fcstChange":  "TEMPO",
+                                      "probability":  null,
+                                      "wdir":  260,
+                                      "wspd":  16,
+                                      "wgst":  29,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  1.55,
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  "-SHRA",
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "BKN",
+                                                         "base":  1600,
+                                                         "type":  "CB"
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  },
+                                  {
+                                      "timeFrom":  1777219200,
+                                      "timeTo":  1777269600,
+                                      "timeBec":  1777226400,
+                                      "fcstChange":  "BECMG",
+                                      "probability":  null,
+                                      "wdir":  340,
+                                      "wspd":  16,
+                                      "wgst":  25,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  3.73,
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  null,
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "BKN",
+                                                         "base":  800,
+                                                         "type":  null
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  },
+                                  {
+                                      "timeFrom":  1777237200,
+                                      "timeTo":  1777269600,
+                                      "timeBec":  null,
+                                      "fcstChange":  "TEMPO",
+                                      "probability":  null,
+                                      "wdir":  300,
+                                      "wspd":  23,
+                                      "wgst":  35,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  0.62,
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  "SHSN",
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "BKN",
+                                                         "base":  500,
+                                                         "type":  null
+                                                     },
+                                                     {
+                                                         "cover":  "BKN",
+                                                         "base":  1600,
+                                                         "type":  "CB"
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  },
+                                  {
+                                      "timeFrom":  1777269600,
+                                      "timeTo":  1777302000,
+                                      "timeBec":  1777273200,
+                                      "fcstChange":  "BECMG",
+                                      "probability":  null,
+                                      "wdir":  280,
+                                      "wspd":  17,
+                                      "wgst":  29,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  3.73,
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  null,
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "BKN",
+                                                         "base":  1600,
+                                                         "type":  null
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  },
+                                  {
+                                      "timeFrom":  1777273200,
+                                      "timeTo":  1777302000,
+                                      "timeBec":  null,
+                                      "fcstChange":  "TEMPO",
+                                      "probability":  null,
+                                      "wdir":  280,
+                                      "wspd":  27,
+                                      "wgst":  39,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  "",
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  null,
+                                      "notDecoded":  null,
+                                      "clouds":  [
+
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  }
+                              ]
+                },
+                {
+                    "icaoId":  "URSS",
+                    "dbPopTime":  "2026-04-26T08:20:32.048Z",
+                    "bulletinTime":  "2026-04-26T08:00:00.000Z",
+                    "issueTime":  "2026-04-26T07:55:00.000Z",
+                    "validTimeFrom":  1777194000,
+                    "validTimeTo":  1777280400,
+                    "rawTAF":  "TAF URSS 260755Z 2609/2709 24003G08MPS 9999 NSC BECMG 2610/2612 28005G10MPS FEW040 BECMG 2616/2617 04007MPS SCT100 BECMG 2707/2708 28003G08MPS",
+                    "mostRecent":  1,
+                    "remarks":  "",
+                    "lat":  43.438,
+                    "lon":  39.926,
+                    "elev":  4,
+                    "prior":  3,
+                    "name":  "Sochi Intl",
+                    "fcsts":  [
+                                  {
+                                      "timeFrom":  1777194000,
+                                      "timeTo":  1777197600,
+                                      "timeBec":  null,
+                                      "fcstChange":  null,
+                                      "probability":  null,
+                                      "wdir":  240,
+                                      "wspd":  6,
+                                      "wgst":  16,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  "6+",
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  null,
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "NSC",
+                                                         "base":  null,
+                                                         "type":  null
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  },
+                                  {
+                                      "timeFrom":  1777197600,
+                                      "timeTo":  1777219200,
+                                      "timeBec":  1777204800,
+                                      "fcstChange":  "BECMG",
+                                      "probability":  null,
+                                      "wdir":  280,
+                                      "wspd":  10,
+                                      "wgst":  19,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  "6+",
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  null,
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "FEW",
+                                                         "base":  4000,
+                                                         "type":  null
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  },
+                                  {
+                                      "timeFrom":  1777219200,
+                                      "timeTo":  1777273200,
+                                      "timeBec":  1777222800,
+                                      "fcstChange":  "BECMG",
+                                      "probability":  null,
+                                      "wdir":  40,
+                                      "wspd":  14,
+                                      "wgst":  null,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  "6+",
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  null,
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "SCT",
+                                                         "base":  10000,
+                                                         "type":  null
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  },
+                                  {
+                                      "timeFrom":  1777273200,
+                                      "timeTo":  1777280400,
+                                      "timeBec":  1777276800,
+                                      "fcstChange":  "BECMG",
+                                      "probability":  null,
+                                      "wdir":  280,
+                                      "wspd":  6,
+                                      "wgst":  16,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  "6+",
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  null,
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "SCT",
+                                                         "base":  10000,
+                                                         "type":  null
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  }
+                              ]
+                },
+                {
+                    "icaoId":  "LEMD",
+                    "dbPopTime":  "2026-04-26T05:25:11.878Z",
+                    "bulletinTime":  "2026-04-26T05:00:00.000Z",
+                    "issueTime":  "2026-04-26T05:00:00.000Z",
+                    "validTimeFrom":  1777183200,
+                    "validTimeTo":  1777291200,
+                    "rawTAF":  "TAF LEMD 260500Z 2606/2712 VRB04KT CAVOK TX27/2615Z TN11/2606Z PROB40 TEMPO 2612/2617 14008G18KT",
+                    "mostRecent":  1,
+                    "remarks":  "",
+                    "lat":  40.466,
+                    "lon":  -3.555,
+                    "elev":  589,
+                    "prior":  0,
+                    "name":  "Madrid/Barajas Arpt",
+                    "fcsts":  [
+                                  {
+                                      "timeFrom":  1777183200,
+                                      "timeTo":  1777291200,
+                                      "timeBec":  null,
+                                      "fcstChange":  null,
+                                      "probability":  null,
+                                      "wdir":  "VRB",
+                                      "wspd":  4,
+                                      "wgst":  null,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  "6+",
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  null,
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "NSC",
+                                                         "base":  null,
+                                                         "type":  null
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  },
+                                  {
+                                      "timeFrom":  1777204800,
+                                      "timeTo":  1777222800,
+                                      "timeBec":  null,
+                                      "fcstChange":  "TEMPO",
+                                      "probability":  40,
+                                      "wdir":  140,
+                                      "wspd":  8,
+                                      "wgst":  18,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  "",
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  null,
+                                      "notDecoded":  null,
+                                      "clouds":  [
+
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  }
+                              ]
+                },
+                {
+                    "icaoId":  "EDDF",
+                    "dbPopTime":  "2026-04-26T05:25:21.749Z",
+                    "bulletinTime":  "2026-04-26T05:00:00.000Z",
+                    "issueTime":  "2026-04-26T05:00:00.000Z",
+                    "validTimeFrom":  1777183200,
+                    "validTimeTo":  1777291200,
+                    "rawTAF":  "TAF EDDF 260500Z 2606/2712 VRB03KT CAVOK BECMG 2606/2608 03007KT",
+                    "mostRecent":  1,
+                    "remarks":  "",
+                    "lat":  50.045,
+                    "lon":  8.598,
+                    "elev":  113,
+                    "prior":  1,
+                    "name":  "Frankfurt/Main Arpt",
+                    "fcsts":  [
+                                  {
+                                      "timeFrom":  1777183200,
+                                      "timeTo":  1777291200,
+                                      "timeBec":  null,
+                                      "fcstChange":  null,
+                                      "probability":  null,
+                                      "wdir":  "VRB",
+                                      "wspd":  3,
+                                      "wgst":  null,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  "6+",
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  "NSW",
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "NSC",
+                                                         "base":  null,
+                                                         "type":  null
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  },
+                                  {
+                                      "timeFrom":  1777183200,
+                                      "timeTo":  1777291200,
+                                      "timeBec":  1777190400,
+                                      "fcstChange":  "BECMG",
+                                      "probability":  null,
+                                      "wdir":  30,
+                                      "wspd":  7,
+                                      "wgst":  null,
+                                      "wshearHgt":  null,
+                                      "wshearDir":  null,
+                                      "wshearSpd":  null,
+                                      "visib":  "6+",
+                                      "altim":  null,
+                                      "vertVis":  null,
+                                      "wxString":  "NSW",
+                                      "notDecoded":  null,
+                                      "clouds":  [
+                                                     {
+                                                         "cover":  "NSC",
+                                                         "base":  null,
+                                                         "type":  null
+                                                     }
+                                                 ],
+                                      "icgTurb":  [
+
+                                                  ],
+                                      "temp":  [
+
+                                               ]
+                                  }
+                              ]
+                }
+            ]
+}

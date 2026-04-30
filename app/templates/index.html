@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESB Aviation</title>
+    <style>
+        :root {
+            --bg: #f6f8fb;
+            --ink: #17212b;
+            --muted: #65758b;
+            --line: #d8e0ea;
+            --panel: #ffffff;
+            --accent: #146c94;
+            --accent-2: #2f7d4f;
+            --warn: #a34d18;
+            --danger: #9f243d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: Inter, Segoe UI, Arial, sans-serif;
+            letter-spacing: 0;
+        }
+
+        header {
+            background: #0f2837;
+            color: white;
+            padding: 22px 28px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        header p {
+            margin: 6px 0 0;
+            color: #c6d6df;
+            font-size: 14px;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            min-height: calc(100vh - 86px);
+        }
+
+        aside {
+            border-right: 1px solid var(--line);
+            background: #eef3f7;
+            padding: 18px;
+        }
+
+        section {
+            padding: 18px 22px;
+        }
+
+        h2 {
+            margin: 0 0 12px;
+            font-size: 18px;
+        }
+
+        h3 {
+            margin: 18px 0 8px;
+            font-size: 14px;
+            color: var(--muted);
+            text-transform: uppercase;
+        }
+
+        .toolbar, .form-grid {
+            display: grid;
+            gap: 10px;
+        }
+
+        .form-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        label {
+            display: grid;
+            gap: 5px;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            min-height: 38px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 8px 10px;
+            font: inherit;
+            background: white;
+            color: var(--ink);
+        }
+
+        textarea {
+            min-height: 92px;
+            resize: vertical;
+            grid-column: 1 / -1;
+        }
+
+        button {
+            border: 0;
+            border-radius: 6px;
+            padding: 10px 12px;
+            background: var(--accent);
+            color: white;
+            font-weight: 650;
+            cursor: pointer;
+        }
+
+        button.secondary {
+            background: var(--accent-2);
+        }
+
+        button.warning {
+            background: var(--warn);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(140px, 1fr));
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .stat, .message, .route, .decision {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 28px;
+        }
+
+        .stat span, .meta {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.8fr);
+            gap: 16px;
+        }
+
+        .list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .message {
+            cursor: pointer;
+        }
+
+        .message.active {
+            border-color: var(--accent);
+            outline: 2px solid rgba(20, 108, 148, 0.12);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            min-height: 24px;
+            border-radius: 999px;
+            padding: 3px 9px;
+            background: #e5edf3;
+            color: #27475b;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .badge.urgent, .badge.critical {
+            background: #fff0dc;
+            color: var(--warn);
+        }
+
+        .badge.distress {
+            background: #ffe4e9;
+            color: var(--danger);
+        }
+
+        pre {
+            overflow: auto;
+            max-height: 300px;
+            padding: 12px;
+            background: #101820;
+            color: #d9edf7;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .status {
+            min-height: 20px;
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        @media (max-width: 980px) {
+            main, .layout, .stats, .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            aside {
+                border-right: 0;
+                border-bottom: 1px solid var(--line);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ESB Aviation</h1>
+        <p>Контекстно-зависимая маршрутизация авиаоперационных сообщений</p>
+    </header>
+
+    <main>
+        <aside>
+            <h2>Панель</h2>
+            <div class="toolbar">
+                <button id="refresh">Обновить</button>
+                <button id="generate" class="secondary">Синтетика + real</button>
+                <button id="importReal" class="warning">Импорт real</button>
+            </div>
+
+            <h3>Фильтр</h3>
+            <label>Тип
+                <select id="typeFilter">
+                    <option value="">Все</option>
+                    <option>FPL</option>
+                    <option>DLA</option>
+                    <option>CNL</option>
+                    <option>CHG</option>
+                    <option>MVT</option>
+                    <option>LDM</option>
+                    <option>CPM</option>
+                    <option>NOTAM</option>
+                    <option>METAR</option>
+                    <option>TAF</option>
+                    <option>SIGMET</option>
+                    <option>SECURITY</option>
+                </select>
+            </label>
+            <label>Приоритет
+                <select id="priorityFilter">
+                    <option value="">Все</option>
+                    <option>NORMAL</option>
+                    <option>URGENT</option>
+                    <option>CRITICAL</option>
+                    <option>DISTRESS</option>
+                </select>
+            </label>
+            <label>Аэропорт
+                <input id="airportFilter" placeholder="UUDD">
+            </label>
+
+            <h3>Сообщение</h3>
+            <div class="form-grid">
+                <label>ID<input id="messageId"></label>
+                <label>Тип<input id="messageType" value="MVT"></label>
+                <label>Приоритет<input id="priority" value="NORMAL"></label>
+                <label>Рейс<input id="flightNumber" value="ESB900"></label>
+                <label>Откуда<input id="origin" value="UUDD"></label>
+                <label>Куда<input id="destination" value="ULLI"></label>
+                <label>Оператор<input id="operator" value="ESB Air"></label>
+                <label>Борт<input id="registration" value="RA-90000"></label>
+                <textarea id="payload">{"event":"operational_update"}</textarea>
+                <textarea id="context">{"flight_phase":"turnaround","weather_severity":0,"source_system":"DEMO"}</textarea>
+            </div>
+            <div class="split">
+                <button id="createMessage">POST</button>
+                <button id="updateMessage" class="secondary">UPDATE</button>
+            </div>
+            <div id="status" class="status"></div>
+        </aside>
+
+        <section>
+            <div class="stats" id="stats"></div>
+            <div class="layout">
+                <div>
+                    <h2>Сообщения</h2>
+                    <div id="messages" class="list"></div>
+                </div>
+                <div>
+                    <h2>Маршрут</h2>
+                    <div class="route">
+                        <button id="routeSelected">Построить маршрут</button>
+                        <pre id="decision">{}</pre>
+                    </div>
+                    <h2 style="margin-top: 18px;">Решения</h2>
+                    <div id="routes" class="list"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const api = "/api/v1";
+        let selectedMessage = null;
+
+        const status = (text) => {
+            document.getElementById("status").textContent = text;
+        };
+
+        const request = async (path, options = {}) => {
+            const response = await fetch(`${api}${path}`, {
+                headers: {"Content-Type": "application/json"},
+                ...options
+            });
+            if (!response.ok) {
+                const body = await response.text();
+                throw new Error(`${response.status}: ${body}`);
+            }
+            return response.json();
+        };
+
+        const readJson = (id) => {
+            const value = document.getElementById(id).value.trim();
+            return value ? JSON.parse(value) : {};
+        };
+
+        const formMessage = () => ({
+            message_id: document.getElementById("messageId").value || `demo-${Date.now()}`,
+            message_type: document.getElementById("messageType").value.toUpperCase(),
+            priority: document.getElementById("priority").value.toUpperCase(),
+            origin_airport: document.getElementById("origin").value.toUpperCase(),
+            destination_airport: document.getElementById("destination").value.toUpperCase(),
+            flight_number: document.getElementById("flightNumber").value,
+            operator: document.getElementById("operator").value,
+            received_at: new Date().toISOString(),
+            payload: readJson("payload"),
+            aircraft_registration: document.getElementById("registration").value,
+            context: readJson("context")
+        });
+
+        const fillForm = (message) => {
+            selectedMessage = message;
+            document.getElementById("messageId").value = message.message_id;
+            document.getElementById("messageType").value = message.message_type;
+            document.getElementById("priority").value = message.priority;
+            document.getElementById("flightNumber").value = message.flight_number;
+            document.getElementById("origin").value = message.origin_airport;
+            document.getElementById("destination").value = message.destination_airport;
+            document.getElementById("operator").value = message.operator;
+            document.getElementById("registration").value = message.aircraft_registration || "";
+            document.getElementById("payload").value = JSON.stringify(message.payload, null, 2);
+            document.getElementById("context").value = JSON.stringify(message.context, null, 2);
+            document.querySelectorAll(".message").forEach((node) => {
+                node.classList.toggle("active", node.dataset.id === message.message_id);
+            });
+        };
+
+        const renderStats = (overview) => {
+            const stats = [
+                ["Сообщения", overview.total_messages],
+                ["Маршруты", overview.routed_messages],
+                ["Типы", Object.keys(overview.message_types).length],
+                ["Источники", Object.keys(overview.source_systems).length]
+            ];
+            document.getElementById("stats").innerHTML = stats.map(([label, value]) =>
+                `<div class="stat"><strong>${value}</strong><span>${label}</span></div>`
+            ).join("");
+        };
+
+        const renderMessages = (messages) => {
+            document.getElementById("messages").innerHTML = messages.map((message) => `
+                <article class="message" data-id="${message.message_id}">
+                    <div class="row">
+                        <strong>${message.message_type} ${message.flight_number}</strong>
+                        <span class="badge ${message.priority.toLowerCase()}">${message.priority}</span>
+                    </div>
+                    <div class="meta">${message.origin_airport} → ${message.destination_airport} · ${message.operator}</div>
+                    <div class="meta">${message.message_id}</div>
+                </article>
+            `).join("");
+            document.querySelectorAll(".message").forEach((node, index) => {
+                node.addEventListener("click", () => fillForm(messages[index]));
+            });
+            if (messages.length && !selectedMessage) {
+                fillForm(messages[0]);
+            }
+        };
+
+        const renderRoutes = (routes) => {
+            document.getElementById("routes").innerHTML = routes.map((route) => `
+                <article class="decision">
+                    <div class="row">
+                        <strong>${route.priority_channel}</strong>
+                        <span class="badge">${route.ttl_seconds}s</span>
+                    </div>
+                    <div class="meta">${route.route_key}</div>
+                    <div class="meta">${route.destinations.join(", ")}</div>
+                </article>
+            `).join("");
+        };
+
+        const loadAll = async () => {
+            const params = new URLSearchParams({
+                limit: "80",
+                message_type: document.getElementById("typeFilter").value,
+                priority: document.getElementById("priorityFilter").value,
+                airport: document.getElementById("airportFilter").value
+            });
+            const [overview, messages, routes] = await Promise.all([
+                request("/aviation/overview"),
+                request(`/aviation/messages?${params}`),
+                request("/aviation/routes?limit=20")
+            ]);
+            renderStats(overview);
+            renderMessages(messages);
+            renderRoutes(routes);
+            status("Готово");
+        };
+
+        document.getElementById("refresh").addEventListener("click", loadAll);
+        document.getElementById("typeFilter").addEventListener("change", loadAll);
+        document.getElementById("priorityFilter").addEventListener("change", loadAll);
+        document.getElementById("airportFilter").addEventListener("input", () => setTimeout(loadAll, 150));
+
+        document.getElementById("generate").addEventListener("click", async () => {
+            status("Генерация");
+            await request("/aviation/synthetic/generate?count=320&seed=42&include_real_data=true", {method: "POST"});
+            selectedMessage = null;
+            await loadAll();
+        });
+
+        document.getElementById("importReal").addEventListener("click", async () => {
+            status("Импорт");
+            await request("/aviation/real/import", {method: "POST"});
+            selectedMessage = null;
+            await loadAll();
+        });
+
+        document.getElementById("createMessage").addEventListener("click", async () => {
+            status("POST");
+            const created = await request("/aviation/messages", {
+                method: "POST",
+                body: JSON.stringify(formMessage())
+            });
+            fillForm(created);
+            await loadAll();
+        });
+
+        document.getElementById("updateMessage").addEventListener("click", async () => {
+            const message = formMessage();
+            status("UPDATE");
+            const updated = await request(`/aviation/messages/${encodeURIComponent(message.message_id)}`, {
+                method: "PUT",
+                body: JSON.stringify(message)
+            });
+            fillForm(updated);
+            await loadAll();
+        });
+
+        document.getElementById("routeSelected").addEventListener("click", async () => {
+            const messageId = document.getElementById("messageId").value;
+            status("Маршрутизация");
+            const decision = await request(`/aviation/messages/${encodeURIComponent(messageId)}/route`, {method: "POST"});
+            document.getElementById("decision").textContent = JSON.stringify(decision, null, 2);
+            await loadAll();
+        });
+
+        loadAll().catch((error) => status(error.message));
+    </script>
+</body>
+</html>

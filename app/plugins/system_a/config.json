@@ -1,0 +1,5 @@
+{
+    "url": "http://91.132.57.66:9090/query",
+    "timeout": 10,
+    "retry_attempts": 3
+}

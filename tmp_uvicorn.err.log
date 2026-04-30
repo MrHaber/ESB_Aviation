@@ -1,0 +1,450 @@
+INFO:     Started server process [17992]
+INFO:     Waiting for application startup.
+2026-04-26 13:36:42.244 | INFO     | app.prometheus.middleware:__init__:124 - CORSMiddleware setup.
+2026-04-26 13:36:42.247 | WARNING  | app.core.main:startup_event:54 - PostgreSQL request log database is unavailable: Psycopg cannot use the 'ProactorEventLoop' to run in async mode. Please use a compatible event loop, for instance by setting 'asyncio.set_event_loop_policy(WindowsSelectorEventLoopPolicy())'
+2026-04-26 13:36:42.248 | INFO     | app.plugins.manager:load_plugin_config:40 - Loaded plugin configuration from app/plugins\plugins_config.json
+2026-04-26 13:36:42.249 | INFO     | app.plugins.base_plugin:__init__:23 - Loaded config for SystemB from C:\Users\user\Desktop\ESB_Aviation\ESB_Aviation\app\plugins\system_b\config.json
+2026-04-26 13:36:42.250 | WARNING  | app.utils.helpers:create_trigger:27 - Run date 2025-07-31 12:35:00+00:00 is in the past, task will not be scheduled
+2026-04-26 13:36:42.250 | INFO     | app.plugins.manager:load_plugin:101 - Scheduled system_b with interval/run_at 2025-07-31T15:35:00Z
+2026-04-26 13:36:42.250 | INFO     | app.plugins.manager:load_plugin:103 - Plugin SystemB loaded successfully from C:\Users\user\Desktop\ESB_Aviation\ESB_Aviation\app\plugins\system_b\config.json
+2026-04-26 13:36:42.720 | INFO     | app.plugins.base_plugin:__init__:23 - Loaded config for SystemA from C:\Users\user\Desktop\ESB_Aviation\ESB_Aviation\app\plugins\system_a\config.json
+2026-04-26 13:36:42.721 | INFO     | app.plugins.manager:load_plugin:101 - Scheduled system_a with interval/run_at 5 minutes
+2026-04-26 13:36:42.721 | INFO     | app.plugins.manager:load_plugin:103 - Plugin SystemA loaded successfully from C:\Users\user\Desktop\ESB_Aviation\ESB_Aviation\app\plugins\system_a\config.json
+2026-04-26 13:36:42.822 | INFO     | app.plugins.manager:load_plugin_config:40 - Loaded plugin configuration from app/plugins\plugins_config.json
+2026-04-26 13:36:42.823 | INFO     | app.core.main:setup_scheduler:78 - Scheduled system_a with interval/run_at 5 minutes
+2026-04-26 13:36:42.823 | WARNING  | app.utils.helpers:create_trigger:27 - Run date 2025-07-31 12:35:00+00:00 is in the past, task will not be scheduled
+2026-04-26 13:36:42.823 | INFO     | app.core.main:setup_scheduler:78 - Scheduled system_b with interval/run_at 2025-07-31T15:35:00Z
+INFO:     Application startup complete.
+2026-04-26 13:36:42.825 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_b at 2026-04-26 13:36:42.825420
+2026-04-26 13:36:42.825 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_b: Plugin is not running
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-04-26 13:37:04.705 | INFO     | app.prometheus.middleware:dispatch:50 - Request GET /api/v1/aviation/overview - ID: req-1777199824-2518685374416
+2026-04-26 13:37:04.710 | INFO     | app.prometheus.middleware:dispatch:111 - Response GET /api/v1/aviation/overview - Status: 200 - Latency: 0.00s - ID: req-1777199824-2518685374416
+2026-04-26 13:37:06.483 | INFO     | app.prometheus.middleware:dispatch:50 - Request GET / - ID: req-1777199826-2518685720400
+2026-04-26 13:37:06.484 | INFO     | app.prometheus.middleware:dispatch:111 - Response GET / - Status: 200 - Latency: 0.00s - ID: req-1777199826-2518685720400
+2026-04-26 13:41:42.833 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 13:41:42.833918
+2026-04-26 13:41:48.254 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 13:41:48.254 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 13:46:42.841 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 13:46:42.841553
+2026-04-26 13:46:48.625 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 13:46:48.625 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 13:51:42.832 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 13:51:42.832674
+2026-04-26 13:51:48.233 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 13:51:48.233 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 13:56:42.840 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 13:56:42.840484
+2026-04-26 13:56:47.917 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 13:56:47.918 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 14:01:42.844 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 14:01:42.844545
+2026-04-26 14:01:47.898 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 14:01:47.898 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 14:06:42.826 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 14:06:42.826920
+2026-04-26 14:06:47.886 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 14:06:47.887 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 14:11:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 14:11:42.823831
+2026-04-26 14:11:47.875 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 14:11:47.875 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 14:16:42.828 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 14:16:42.828173
+2026-04-26 14:16:47.882 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 14:16:47.883 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 14:21:42.830 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 14:21:42.830414
+2026-04-26 14:21:47.882 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 14:21:47.882 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 14:26:42.831 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 14:26:42.831047
+2026-04-26 14:26:48.248 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 14:26:48.249 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 14:31:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 14:31:42.824332
+2026-04-26 14:31:48.315 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 14:31:48.315 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 14:36:42.826 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 14:36:42.826793
+2026-04-26 14:36:47.894 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 14:36:47.894 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 14:41:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 14:41:42.823649
+2026-04-26 14:41:47.861 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 14:41:47.862 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 14:46:42.831 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 14:46:42.831779
+2026-04-26 14:46:47.891 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 14:46:47.892 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 14:51:42.829 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 14:51:42.829567
+2026-04-26 14:51:47.874 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 14:51:47.874 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 14:56:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 14:56:42.824414
+2026-04-26 14:56:47.872 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 14:56:47.872 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 15:01:42.827 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 15:01:42.827128
+2026-04-26 15:01:47.896 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 15:01:47.906 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 15:06:42.833 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 15:06:42.833175
+2026-04-26 15:06:47.894 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 15:06:47.894 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 15:11:42.828 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 15:11:42.828373
+2026-04-26 15:11:47.886 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 15:11:47.886 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 15:16:42.835 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 15:16:42.835288
+2026-04-26 15:16:47.883 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 15:16:47.884 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 15:21:42.826 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 15:21:42.826029
+2026-04-26 15:21:47.893 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 15:21:47.893 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 15:26:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 15:26:42.824278
+2026-04-26 15:26:47.875 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 15:26:47.883 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 15:31:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 15:31:42.824197
+2026-04-26 15:31:47.875 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 15:31:47.876 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 15:36:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 15:36:42.824339
+2026-04-26 15:36:47.879 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 15:36:47.879 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 15:41:42.832 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 15:41:42.832191
+2026-04-26 15:41:47.884 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 15:41:47.884 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 15:46:42.826 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 15:46:42.826492
+2026-04-26 15:46:47.887 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 15:46:47.888 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 15:51:42.832 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 15:51:42.832690
+2026-04-26 15:51:47.876 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 15:51:47.876 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 15:56:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 15:56:42.824743
+2026-04-26 15:56:47.874 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 15:56:47.874 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 16:01:42.826 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 16:01:42.826493
+2026-04-26 16:01:47.866 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 16:01:47.866 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 16:06:42.827 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 16:06:42.827368
+2026-04-26 16:06:47.896 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 16:06:47.896 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 16:11:42.826 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 16:11:42.826896
+2026-04-26 16:11:47.861 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 16:11:47.862 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 16:16:42.836 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 16:16:42.836481
+2026-04-26 16:16:47.873 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 16:16:47.874 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 16:21:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 16:21:42.824078
+2026-04-26 16:21:47.869 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 16:21:47.869 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 16:26:42.825 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 16:26:42.825303
+2026-04-26 16:26:47.873 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 16:26:47.873 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 16:31:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 16:31:42.824336
+2026-04-26 16:31:47.872 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 16:31:47.873 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 16:36:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 16:36:42.823766
+2026-04-26 16:36:48.183 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 16:36:48.183 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 16:41:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 16:41:42.823712
+2026-04-26 16:41:47.870 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 16:41:47.870 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 16:46:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 16:46:42.824282
+2026-04-26 16:46:47.892 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 16:46:47.892 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 16:51:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 16:51:42.824584
+2026-04-26 16:51:47.874 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 16:51:47.874 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 16:56:42.828 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 16:56:42.828362
+2026-04-26 16:56:47.888 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 16:56:47.888 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 17:01:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 17:01:42.824239
+2026-04-26 17:01:47.871 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 17:01:47.871 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 17:06:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 17:06:42.823715
+2026-04-26 17:06:47.864 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 17:06:47.864 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 17:11:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 17:11:42.824551
+2026-04-26 17:11:47.876 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 17:11:47.877 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 17:16:42.830 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 17:16:42.830686
+2026-04-26 17:16:47.890 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 17:16:47.891 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 17:21:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 17:21:42.823961
+2026-04-26 17:21:47.883 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 17:21:47.884 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 17:26:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 17:26:42.823605
+2026-04-26 17:26:48.235 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 17:26:48.235 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 17:31:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 17:31:42.824378
+2026-04-26 17:31:47.884 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 17:31:47.884 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 17:36:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 17:36:42.824300
+2026-04-26 17:36:47.888 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 17:36:47.888 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 17:41:42.830 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 17:41:42.830691
+2026-04-26 17:41:47.893 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 17:41:47.894 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 17:46:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 17:46:42.824288
+2026-04-26 17:46:48.008 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 17:46:48.009 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 17:51:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 17:51:42.824333
+2026-04-26 17:51:47.875 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 17:51:47.876 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 17:56:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 17:56:42.824989
+2026-04-26 17:56:47.887 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 17:56:47.887 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 18:01:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 18:01:42.823668
+2026-04-26 18:01:47.890 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 18:01:47.891 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 18:06:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 18:06:42.823620
+2026-04-26 18:06:47.888 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 18:06:47.888 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 18:11:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 18:11:42.824098
+2026-04-26 18:11:47.871 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 18:11:47.872 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 18:16:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 18:16:42.823797
+2026-04-26 18:16:47.866 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 18:16:47.866 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 18:21:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 18:21:42.824297
+2026-04-26 18:21:47.879 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 18:21:47.880 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 18:26:42.832 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 18:26:42.832196
+2026-04-26 18:26:47.865 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 18:26:47.866 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 18:31:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 18:31:42.824482
+2026-04-26 18:31:47.976 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 18:31:47.977 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 18:36:42.832 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 18:36:42.832174
+2026-04-26 18:36:47.887 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 18:36:47.887 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 18:41:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 18:41:42.824246
+2026-04-26 18:41:47.891 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 18:41:47.892 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 18:46:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 18:46:42.824141
+2026-04-26 18:46:47.874 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 18:46:47.875 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 18:51:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 18:51:42.824286
+2026-04-26 18:51:47.890 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 18:51:47.890 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 18:56:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 18:56:42.823614
+2026-04-26 18:56:47.875 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 18:56:47.876 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 19:01:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 19:01:42.823928
+2026-04-26 19:01:47.904 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 19:01:47.905 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 19:06:42.825 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 19:06:42.825441
+2026-04-26 19:06:47.899 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 19:06:47.899 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 19:11:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 19:11:42.824299
+2026-04-26 19:11:47.873 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 19:11:47.873 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 19:16:42.832 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 19:16:42.832012
+2026-04-26 19:16:47.883 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 19:16:47.884 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 19:21:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 19:21:42.824683
+2026-04-26 19:21:47.877 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 19:21:47.878 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 19:26:42.825 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 19:26:42.825063
+2026-04-26 19:26:47.877 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 19:26:47.877 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 19:31:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 19:31:42.823923
+2026-04-26 19:31:47.882 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 19:31:47.883 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 19:36:42.827 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 19:36:42.827257
+2026-04-26 19:36:47.893 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 19:36:47.894 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 19:41:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 19:41:42.824544
+2026-04-26 19:41:47.880 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 19:41:47.880 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 19:46:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 19:46:42.824419
+2026-04-26 19:46:47.884 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 19:46:47.885 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 19:51:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 19:51:42.824892
+2026-04-26 19:51:48.236 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 19:51:48.237 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 19:56:42.827 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 19:56:42.827609
+2026-04-26 19:56:48.946 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 19:56:48.946 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 20:01:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 20:01:42.824799
+2026-04-26 20:01:47.876 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 20:01:47.876 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 20:06:42.829 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 20:06:42.829542
+2026-04-26 20:06:47.886 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 20:06:47.887 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 20:11:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 20:11:42.824543
+2026-04-26 20:11:48.894 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 20:11:48.895 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 20:16:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 20:16:42.823683
+2026-04-26 20:16:47.876 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 20:16:47.877 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 20:21:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 20:21:42.823888
+2026-04-26 20:21:47.876 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 20:21:47.877 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 20:26:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 20:26:42.824628
+2026-04-26 20:26:48.923 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 20:26:48.923 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 20:31:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 20:31:42.824368
+2026-04-26 20:31:47.868 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 20:31:47.868 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 20:36:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 20:36:42.823833
+2026-04-26 20:36:47.887 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 20:36:47.888 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 20:41:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 20:41:42.824336
+2026-04-26 20:41:47.882 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 20:41:47.883 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 20:46:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 20:46:42.823817
+2026-04-26 20:46:47.878 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 20:46:47.879 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 20:51:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 20:51:42.823842
+2026-04-26 20:51:47.881 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 20:51:47.882 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 20:56:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 20:56:42.823830
+2026-04-26 20:56:48.929 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 20:56:48.930 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 21:01:42.830 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 21:01:42.830130
+2026-04-26 21:01:47.902 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 21:01:47.903 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 21:06:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 21:06:42.824174
+2026-04-26 21:06:47.871 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 21:06:47.871 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 21:11:42.825 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 21:11:42.825605
+2026-04-26 21:11:47.882 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 21:11:47.882 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 21:16:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 21:16:42.823711
+2026-04-26 21:16:49.261 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 21:16:49.261 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 21:21:42.829 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 21:21:42.829617
+2026-04-26 21:21:48.241 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 21:21:48.242 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 21:26:42.881 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 21:26:42.881437
+2026-04-26 21:26:48.303 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 21:26:48.304 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 21:31:42.901 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 21:31:42.901757
+2026-04-26 21:31:45.135 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 21:31:45.136 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 21:36:42.897 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 21:36:42.897476
+2026-04-26 21:36:45.579 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 21:36:45.579 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 21:41:42.901 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 21:41:42.901725
+2026-04-26 21:41:45.130 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 21:41:45.130 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 21:46:42.875 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 21:46:42.875120
+2026-04-26 21:46:45.107 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 21:46:45.107 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 21:51:42.878 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 21:51:42.878342
+2026-04-26 21:51:45.103 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 21:51:45.103 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 21:56:42.880 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 21:56:42.880645
+2026-04-26 21:56:45.564 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 21:56:45.565 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 22:01:42.865 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 22:01:42.865180
+2026-04-26 22:01:45.090 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 22:01:45.091 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 22:06:42.867 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 22:06:42.867058
+2026-04-26 22:06:45.094 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 22:06:45.094 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 22:11:42.865 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 22:11:42.865293
+2026-04-26 22:11:45.096 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 22:11:45.097 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 22:16:42.863 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 22:16:42.863716
+2026-04-26 22:16:45.092 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 22:16:45.093 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26 22:21:42.854 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 22:21:42.854539
+2026-04-26 22:21:45.242 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 22:21:45.243 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 22:26:42.856 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 22:26:42.856031
+2026-04-26 22:26:45.248 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 22:26:45.248 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 22:31:42.865 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 22:31:42.865413
+2026-04-26 22:31:45.262 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 22:31:45.263 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 22:36:42.836 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 22:36:42.836185
+2026-04-26 22:36:45.228 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 22:36:45.228 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 22:41:42.843 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 22:41:42.843344
+2026-04-26 22:41:45.233 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 22:41:45.234 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 22:46:42.851 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 22:46:42.851000
+2026-04-26 22:46:45.242 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 22:46:45.243 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 22:51:42.847 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 22:51:42.847512
+2026-04-26 22:51:45.238 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 22:51:45.238 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 22:56:42.840 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 22:56:42.840035
+2026-04-26 22:56:45.238 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 22:56:45.239 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 23:01:42.846 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 23:01:42.846209
+2026-04-26 23:01:45.250 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 23:01:45.251 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 23:06:42.840 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 23:06:42.840917
+2026-04-26 23:06:45.230 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 23:06:45.231 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 23:11:42.829 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 23:11:42.829707
+2026-04-26 23:11:45.215 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 23:11:45.216 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 23:16:42.834 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 23:16:42.834872
+2026-04-26 23:16:45.224 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 23:16:45.224 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 23:21:42.832 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 23:21:42.832856
+2026-04-26 23:21:45.218 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 23:21:45.218 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 23:26:42.828 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 23:26:42.828890
+2026-04-26 23:26:45.216 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 23:26:45.217 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 23:31:42.833 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 23:31:42.833994
+2026-04-26 23:31:45.230 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 23:31:45.231 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 23:36:42.826 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 23:36:42.826161
+2026-04-26 23:36:45.216 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 23:36:45.217 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 23:41:42.843 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 23:41:42.843137
+2026-04-26 23:41:45.233 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 23:41:45.234 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 23:46:42.828 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 23:46:42.828315
+2026-04-26 23:46:45.220 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 23:46:45.220 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 23:51:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 23:51:42.824216
+2026-04-26 23:51:45.220 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 23:51:45.220 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-26 23:56:42.831 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-26 23:56:42.831243
+2026-04-26 23:56:45.215 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-26 23:56:45.216 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-27 00:01:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-27 00:01:42.823670
+2026-04-27 00:01:45.219 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-27 00:01:45.219 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-27 00:06:42.845 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-27 00:06:42.845089
+2026-04-27 00:06:45.234 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-27 00:06:45.235 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-27 00:11:42.827 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-27 00:11:42.827556
+2026-04-27 00:11:45.213 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-27 00:11:45.214 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-27 00:16:42.831 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-27 00:16:42.831833
+2026-04-27 00:16:46.214 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-27 00:16:46.214 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-27 00:21:42.833 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-27 00:21:42.833147
+2026-04-27 00:21:45.222 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-27 00:21:45.223 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-27 00:26:42.827 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-27 00:26:42.827204
+2026-04-27 00:26:45.224 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-27 00:26:45.224 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-27 00:31:42.827 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-27 00:31:42.827598
+2026-04-27 00:31:45.212 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-27 00:31:45.213 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-27 00:36:42.837 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-27 00:36:42.837723
+2026-04-27 00:36:45.222 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-27 00:36:45.223 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-27 00:41:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-27 00:41:42.823684
+2026-04-27 00:41:45.210 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-27 00:41:45.210 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-27 00:46:42.828 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-27 00:46:42.828859
+2026-04-27 00:46:45.220 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-27 00:46:45.220 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-27 00:51:42.823 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-27 00:51:42.823700
+2026-04-27 00:51:46.209 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-27 00:51:46.210 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-27 00:56:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-27 00:56:42.824045
+2026-04-27 00:56:45.213 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-27 00:56:45.213 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-27 01:01:42.827 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-27 01:01:42.827771
+2026-04-27 01:01:45.217 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-27 01:01:45.217 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-27 01:06:42.827 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-27 01:06:42.827897
+2026-04-27 01:06:45.213 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-27 01:06:45.214 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-27 01:11:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-27 01:11:42.824275
+2026-04-27 01:11:45.218 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-27 01:11:45.218 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-27 01:16:42.824 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-27 01:16:42.824561
+2026-04-27 01:16:45.215 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-27 01:16:45.215 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-27 01:21:42.828 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-27 01:21:42.828180
+2026-04-27 01:21:45.209 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-27 01:21:45.209 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected
+2026-04-27 01:26:42.830 | INFO     | app.core.main:fetch_plugin_data:81 - Fetching data for system_a at 2026-04-27 01:26:42.830422
+2026-04-27 01:26:45.216 | ERROR    | app.plugins.system_a.system_a:fetch_data:24 - Error fetching data from System A: Server disconnected
+2026-04-27 01:26:45.216 | ERROR    | app.core.main:fetch_plugin_data:84 - Error fetching data for system_a: Server disconnected

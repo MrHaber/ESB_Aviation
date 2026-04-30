@@ -1,0 +1,11 @@
+{
+    "plugins": ["system_a", "system_b"],
+    "scheduled_plugins": {
+        "system_a": {"interval": "5 minutes"},
+        "system_b": {"run_at": "2025-07-31T15:35:00Z"}
+    },
+    "plugin_priorities": {
+        "system_a": {"priority": 2, "load_mode": "sequential"},
+        "system_b": {"priority": 1, "load_mode": "sequential"}
+  }
+}

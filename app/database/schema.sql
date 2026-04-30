@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS request_logs ( id UUID PRIMARY KEY, timestamp TIMESTAMP NOT NULL, user_id VARCHAR(255) NOT NULL, plugin_name VARCHAR(255) NOT NULL, request_payload JSONB NOT NULL, response_payload JSONB NOT NULL, status VARCHAR(50) NOT NULL, duration_ms INTEGER NOT NULL );

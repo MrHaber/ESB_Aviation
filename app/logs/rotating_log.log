@@ -1,0 +1,484 @@
+2026-04-26T13:34:02.479354+0300 INFO CORSMiddleware setup.
+2026-04-26T13:34:02.480354+0300 WARNING PostgreSQL request log database is unavailable: Psycopg cannot use the 'ProactorEventLoop' to run in async mode. Please use a compatible event loop, for instance by setting 'asyncio.set_event_loop_policy(WindowsSelectorEventLoopPolicy())'
+2026-04-26T13:34:02.480854+0300 INFO Loaded plugin configuration from app/plugins\plugins_config.json
+2026-04-26T13:34:02.489856+0300 INFO Loaded config for SystemB from C:\Users\user\Desktop\ESB_Aviation\ESB_Aviation\app\plugins\system_b\config.json
+2026-04-26T13:34:02.490356+0300 WARNING Run date 2025-07-31 12:35:00+00:00 is in the past, task will not be scheduled
+2026-04-26T13:34:02.490356+0300 INFO Scheduled system_b with interval/run_at 2025-07-31T15:35:00Z
+2026-04-26T13:34:02.490856+0300 INFO Plugin SystemB loaded successfully from C:\Users\user\Desktop\ESB_Aviation\ESB_Aviation\app\plugins\system_b\config.json
+2026-04-26T13:34:02.904392+0300 ERROR Failed to load plugin system_a: No module named 'xmltodict'
+2026-04-26T13:34:03.006275+0300 INFO Loaded plugin configuration from app/plugins\plugins_config.json
+2026-04-26T13:34:03.006775+0300 WARNING Run date 2025-07-31 12:35:00+00:00 is in the past, task will not be scheduled
+2026-04-26T13:34:03.006775+0300 INFO Scheduled system_b with interval/run_at 2025-07-31T15:35:00Z
+2026-04-26T13:34:03.008276+0300 INFO Fetching data for system_b at 2026-04-26 13:34:03.008276
+2026-04-26T13:34:03.008276+0300 ERROR Error fetching data for system_b: Plugin is not running
+2026-04-26T13:34:43.269880+0300 INFO CORSMiddleware setup.
+2026-04-26T13:34:43.270381+0300 WARNING PostgreSQL request log database is unavailable: Psycopg cannot use the 'ProactorEventLoop' to run in async mode. Please use a compatible event loop, for instance by setting 'asyncio.set_event_loop_policy(WindowsSelectorEventLoopPolicy())'
+2026-04-26T13:34:43.270881+0300 INFO Loaded plugin configuration from app/plugins\plugins_config.json
+2026-04-26T13:34:43.272881+0300 INFO Loaded config for SystemB from C:\Users\user\Desktop\ESB_Aviation\ESB_Aviation\app\plugins\system_b\config.json
+2026-04-26T13:34:43.273381+0300 WARNING Run date 2025-07-31 12:35:00+00:00 is in the past, task will not be scheduled
+2026-04-26T13:34:43.273381+0300 INFO Scheduled system_b with interval/run_at 2025-07-31T15:35:00Z
+2026-04-26T13:34:43.273881+0300 INFO Plugin SystemB loaded successfully from C:\Users\user\Desktop\ESB_Aviation\ESB_Aviation\app\plugins\system_b\config.json
+2026-04-26T13:34:43.515936+0300 ERROR Failed to load plugin system_a: No module named 'xmltodict'
+2026-04-26T13:34:43.617446+0300 INFO Loaded plugin configuration from app/plugins\plugins_config.json
+2026-04-26T13:34:43.617946+0300 WARNING Run date 2025-07-31 12:35:00+00:00 is in the past, task will not be scheduled
+2026-04-26T13:34:43.618447+0300 INFO Scheduled system_b with interval/run_at 2025-07-31T15:35:00Z
+2026-04-26T13:34:43.619447+0300 INFO Fetching data for system_b at 2026-04-26 13:34:43.619447
+2026-04-26T13:34:43.619947+0300 ERROR Error fetching data for system_b: Plugin is not running
+2026-04-26T13:35:09.762064+0300 INFO Request GET /api/v1/aviation/overview - ID: req-1777199709-3038038693328
+2026-04-26T13:35:09.766065+0300 INFO Response GET /api/v1/aviation/overview - Status: 200 - Latency: 0.00s - ID: req-1777199709-3038038693328
+2026-04-26T13:35:19.970316+0300 INFO Request POST /api/v1/aviation/messages - ID: req-1777199719-3038039029392
+2026-04-26T13:35:19.981819+0300 INFO Response POST /api/v1/aviation/messages - Status: 201 - Latency: 0.01s - ID: req-1777199719-3038039029392
+2026-04-26T13:35:29.296675+0300 INFO Request PUT /api/v1/aviation/messages/smoke-001 - ID: req-1777199729-3038039147408
+2026-04-26T13:35:29.307243+0300 INFO Response PUT /api/v1/aviation/messages/smoke-001 - Status: 200 - Latency: 0.01s - ID: req-1777199729-3038039147408
+2026-04-26T13:35:35.685571+0300 INFO Request GET /api/v1/aviation/messages/smoke-001 - ID: req-1777199735-3038039153744
+2026-04-26T13:35:35.688581+0300 INFO Response GET /api/v1/aviation/messages/smoke-001 - Status: 200 - Latency: 0.00s - ID: req-1777199735-3038039153744
+2026-04-26T13:35:43.669425+0300 INFO Request POST /api/v1/aviation/messages/smoke-001/route - ID: req-1777199743-3038039160912
+2026-04-26T13:35:43.678422+0300 INFO Response POST /api/v1/aviation/messages/smoke-001/route - Status: 200 - Latency: 0.01s - ID: req-1777199743-3038039160912
+2026-04-26T13:35:50.043938+0300 INFO Request GET / - ID: req-1777199750-3038039168592
+2026-04-26T13:35:50.045437+0300 INFO Response GET / - Status: 200 - Latency: 0.00s - ID: req-1777199750-3038039168592
+2026-04-26T13:36:42.244603+0300 INFO CORSMiddleware setup.
+2026-04-26T13:36:42.247103+0300 WARNING PostgreSQL request log database is unavailable: Psycopg cannot use the 'ProactorEventLoop' to run in async mode. Please use a compatible event loop, for instance by setting 'asyncio.set_event_loop_policy(WindowsSelectorEventLoopPolicy())'
+2026-04-26T13:36:42.248104+0300 INFO Loaded plugin configuration from app/plugins\plugins_config.json
+2026-04-26T13:36:42.249604+0300 INFO Loaded config for SystemB from C:\Users\user\Desktop\ESB_Aviation\ESB_Aviation\app\plugins\system_b\config.json
+2026-04-26T13:36:42.250104+0300 WARNING Run date 2025-07-31 12:35:00+00:00 is in the past, task will not be scheduled
+2026-04-26T13:36:42.250604+0300 INFO Scheduled system_b with interval/run_at 2025-07-31T15:35:00Z
+2026-04-26T13:36:42.250604+0300 INFO Plugin SystemB loaded successfully from C:\Users\user\Desktop\ESB_Aviation\ESB_Aviation\app\plugins\system_b\config.json
+2026-04-26T13:36:42.720395+0300 INFO Loaded config for SystemA from C:\Users\user\Desktop\ESB_Aviation\ESB_Aviation\app\plugins\system_a\config.json
+2026-04-26T13:36:42.721396+0300 INFO Scheduled system_a with interval/run_at 5 minutes
+2026-04-26T13:36:42.721396+0300 INFO Plugin SystemA loaded successfully from C:\Users\user\Desktop\ESB_Aviation\ESB_Aviation\app\plugins\system_a\config.json
+2026-04-26T13:36:42.822919+0300 INFO Loaded plugin configuration from app/plugins\plugins_config.json
+2026-04-26T13:36:42.823564+0300 INFO Scheduled system_a with interval/run_at 5 minutes
+2026-04-26T13:36:42.823564+0300 WARNING Run date 2025-07-31 12:35:00+00:00 is in the past, task will not be scheduled
+2026-04-26T13:36:42.823919+0300 INFO Scheduled system_b with interval/run_at 2025-07-31T15:35:00Z
+2026-04-26T13:36:42.825420+0300 INFO Fetching data for system_b at 2026-04-26 13:36:42.825420
+2026-04-26T13:36:42.825420+0300 ERROR Error fetching data for system_b: Plugin is not running
+2026-04-26T13:37:04.705899+0300 INFO Request GET /api/v1/aviation/overview - ID: req-1777199824-2518685374416
+2026-04-26T13:37:04.710139+0300 INFO Response GET /api/v1/aviation/overview - Status: 200 - Latency: 0.00s - ID: req-1777199824-2518685374416
+2026-04-26T13:37:06.483528+0300 INFO Request GET / - ID: req-1777199826-2518685720400
+2026-04-26T13:37:06.484028+0300 INFO Response GET / - Status: 200 - Latency: 0.00s - ID: req-1777199826-2518685720400
+2026-04-26T13:41:42.833918+0300 INFO Fetching data for system_a at 2026-04-26 13:41:42.833918
+2026-04-26T13:41:48.254081+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T13:41:48.254582+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T13:46:42.841553+0300 INFO Fetching data for system_a at 2026-04-26 13:46:42.841553
+2026-04-26T13:46:48.625466+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T13:46:48.625915+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T13:51:42.832674+0300 INFO Fetching data for system_a at 2026-04-26 13:51:42.832674
+2026-04-26T13:51:48.233395+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T13:51:48.233896+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T13:56:42.840484+0300 INFO Fetching data for system_a at 2026-04-26 13:56:42.840484
+2026-04-26T13:56:47.917671+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T13:56:47.918171+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T14:01:42.844545+0300 INFO Fetching data for system_a at 2026-04-26 14:01:42.844545
+2026-04-26T14:01:47.898341+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T14:01:47.898841+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T14:06:42.826920+0300 INFO Fetching data for system_a at 2026-04-26 14:06:42.826920
+2026-04-26T14:06:47.886643+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T14:06:47.887143+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T14:11:42.823831+0300 INFO Fetching data for system_a at 2026-04-26 14:11:42.823831
+2026-04-26T14:11:47.875254+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T14:11:47.875753+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T14:16:42.828173+0300 INFO Fetching data for system_a at 2026-04-26 14:16:42.828173
+2026-04-26T14:16:47.882777+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T14:16:47.883278+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T14:21:42.830414+0300 INFO Fetching data for system_a at 2026-04-26 14:21:42.830414
+2026-04-26T14:21:47.882020+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T14:21:47.882462+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T14:26:42.831047+0300 INFO Fetching data for system_a at 2026-04-26 14:26:42.831047
+2026-04-26T14:26:48.248966+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T14:26:48.249466+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T14:31:42.824332+0300 INFO Fetching data for system_a at 2026-04-26 14:31:42.824332
+2026-04-26T14:31:48.315157+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T14:31:48.315657+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T14:36:42.826793+0300 INFO Fetching data for system_a at 2026-04-26 14:36:42.826793
+2026-04-26T14:36:47.894008+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T14:36:47.894508+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T14:41:42.823834+0300 INFO Fetching data for system_a at 2026-04-26 14:41:42.823649
+2026-04-26T14:41:47.861524+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T14:41:47.862025+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T14:46:42.831779+0300 INFO Fetching data for system_a at 2026-04-26 14:46:42.831779
+2026-04-26T14:46:47.891604+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T14:46:47.892104+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T14:51:42.829567+0300 INFO Fetching data for system_a at 2026-04-26 14:51:42.829567
+2026-04-26T14:51:47.874070+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T14:51:47.874570+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T14:56:42.824414+0300 INFO Fetching data for system_a at 2026-04-26 14:56:42.824414
+2026-04-26T14:56:47.872494+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T14:56:47.872995+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T15:01:42.827128+0300 INFO Fetching data for system_a at 2026-04-26 15:01:42.827128
+2026-04-26T15:01:47.896366+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T15:01:47.906868+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T15:06:42.833175+0300 INFO Fetching data for system_a at 2026-04-26 15:06:42.833175
+2026-04-26T15:06:47.894024+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T15:06:47.894524+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T15:11:42.828373+0300 INFO Fetching data for system_a at 2026-04-26 15:11:42.828373
+2026-04-26T15:11:47.886170+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T15:11:47.886670+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T15:16:42.835288+0300 INFO Fetching data for system_a at 2026-04-26 15:16:42.835288
+2026-04-26T15:16:47.883531+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T15:16:47.884031+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T15:21:42.826029+0300 INFO Fetching data for system_a at 2026-04-26 15:21:42.826029
+2026-04-26T15:21:47.893196+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T15:21:47.893696+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T15:26:42.824278+0300 INFO Fetching data for system_a at 2026-04-26 15:26:42.824278
+2026-04-26T15:26:47.875993+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T15:26:47.883994+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T15:31:42.824197+0300 INFO Fetching data for system_a at 2026-04-26 15:31:42.824197
+2026-04-26T15:31:47.875985+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T15:31:47.876485+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T15:36:42.824339+0300 INFO Fetching data for system_a at 2026-04-26 15:36:42.824339
+2026-04-26T15:36:47.879071+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T15:36:47.879572+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T15:41:42.832191+0300 INFO Fetching data for system_a at 2026-04-26 15:41:42.832191
+2026-04-26T15:41:47.884068+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T15:41:47.884567+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T15:46:42.826492+0300 INFO Fetching data for system_a at 2026-04-26 15:46:42.826492
+2026-04-26T15:46:47.887694+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T15:46:47.888194+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T15:51:42.832690+0300 INFO Fetching data for system_a at 2026-04-26 15:51:42.832690
+2026-04-26T15:51:47.876480+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T15:51:47.876980+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T15:56:42.824743+0300 INFO Fetching data for system_a at 2026-04-26 15:56:42.824743
+2026-04-26T15:56:47.874113+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T15:56:47.874545+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T16:01:42.826493+0300 INFO Fetching data for system_a at 2026-04-26 16:01:42.826493
+2026-04-26T16:01:47.866471+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T16:01:47.866971+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T16:06:42.827368+0300 INFO Fetching data for system_a at 2026-04-26 16:06:42.827368
+2026-04-26T16:06:47.896137+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T16:06:47.896637+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T16:11:42.826896+0300 INFO Fetching data for system_a at 2026-04-26 16:11:42.826896
+2026-04-26T16:11:47.861806+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T16:11:47.862307+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T16:16:42.836481+0300 INFO Fetching data for system_a at 2026-04-26 16:16:42.836481
+2026-04-26T16:16:47.873630+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T16:16:47.874131+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T16:21:42.824078+0300 INFO Fetching data for system_a at 2026-04-26 16:21:42.824078
+2026-04-26T16:21:47.869100+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T16:21:47.869600+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T16:26:42.825303+0300 INFO Fetching data for system_a at 2026-04-26 16:26:42.825303
+2026-04-26T16:26:47.873294+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T16:26:47.873794+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T16:31:42.824336+0300 INFO Fetching data for system_a at 2026-04-26 16:31:42.824336
+2026-04-26T16:31:47.872189+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T16:31:47.873189+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T16:36:42.823766+0300 INFO Fetching data for system_a at 2026-04-26 16:36:42.823766
+2026-04-26T16:36:48.183129+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T16:36:48.183629+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T16:41:42.823712+0300 INFO Fetching data for system_a at 2026-04-26 16:41:42.823712
+2026-04-26T16:41:47.870195+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T16:41:47.870695+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T16:46:42.824282+0300 INFO Fetching data for system_a at 2026-04-26 16:46:42.824282
+2026-04-26T16:46:47.892044+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T16:46:47.892544+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T16:51:42.824584+0300 INFO Fetching data for system_a at 2026-04-26 16:51:42.824584
+2026-04-26T16:51:47.874429+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T16:51:47.874929+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T16:56:42.828362+0300 INFO Fetching data for system_a at 2026-04-26 16:56:42.828362
+2026-04-26T16:56:47.888139+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T16:56:47.888639+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T17:01:42.824239+0300 INFO Fetching data for system_a at 2026-04-26 17:01:42.824239
+2026-04-26T17:01:47.871358+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T17:01:47.871858+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T17:06:42.823715+0300 INFO Fetching data for system_a at 2026-04-26 17:06:42.823715
+2026-04-26T17:06:47.864016+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T17:06:47.864516+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T17:11:42.824551+0300 INFO Fetching data for system_a at 2026-04-26 17:11:42.824551
+2026-04-26T17:11:47.876946+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T17:11:47.877446+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T17:16:42.830686+0300 INFO Fetching data for system_a at 2026-04-26 17:16:42.830686
+2026-04-26T17:16:47.890717+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T17:16:47.891218+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T17:21:42.823961+0300 INFO Fetching data for system_a at 2026-04-26 17:21:42.823961
+2026-04-26T17:21:47.883892+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T17:21:47.884392+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T17:26:42.823605+0300 INFO Fetching data for system_a at 2026-04-26 17:26:42.823605
+2026-04-26T17:26:48.235189+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T17:26:48.235689+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T17:31:42.824378+0300 INFO Fetching data for system_a at 2026-04-26 17:31:42.824378
+2026-04-26T17:31:47.884274+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T17:31:47.884774+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T17:36:42.824300+0300 INFO Fetching data for system_a at 2026-04-26 17:36:42.824300
+2026-04-26T17:36:47.888022+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T17:36:47.888522+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T17:41:42.830691+0300 INFO Fetching data for system_a at 2026-04-26 17:41:42.830691
+2026-04-26T17:41:47.893529+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T17:41:47.894028+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T17:46:42.824288+0300 INFO Fetching data for system_a at 2026-04-26 17:46:42.824288
+2026-04-26T17:46:48.008179+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T17:46:48.009180+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T17:51:42.824333+0300 INFO Fetching data for system_a at 2026-04-26 17:51:42.824333
+2026-04-26T17:51:47.875959+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T17:51:47.876419+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T17:56:42.824989+0300 INFO Fetching data for system_a at 2026-04-26 17:56:42.824989
+2026-04-26T17:56:47.887000+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T17:56:47.887501+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T18:01:42.823668+0300 INFO Fetching data for system_a at 2026-04-26 18:01:42.823668
+2026-04-26T18:01:47.890930+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T18:01:47.891430+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T18:06:42.823620+0300 INFO Fetching data for system_a at 2026-04-26 18:06:42.823620
+2026-04-26T18:06:47.888321+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T18:06:47.888822+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T18:11:42.824098+0300 INFO Fetching data for system_a at 2026-04-26 18:11:42.824098
+2026-04-26T18:11:47.871518+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T18:11:47.872019+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T18:16:42.823797+0300 INFO Fetching data for system_a at 2026-04-26 18:16:42.823797
+2026-04-26T18:16:47.866220+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T18:16:47.866710+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T18:21:42.824297+0300 INFO Fetching data for system_a at 2026-04-26 18:21:42.824297
+2026-04-26T18:21:47.879717+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T18:21:47.880217+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T18:26:42.832196+0300 INFO Fetching data for system_a at 2026-04-26 18:26:42.832196
+2026-04-26T18:26:47.865742+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T18:26:47.866242+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T18:31:42.824482+0300 INFO Fetching data for system_a at 2026-04-26 18:31:42.824482
+2026-04-26T18:31:47.976896+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T18:31:47.977396+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T18:36:42.832174+0300 INFO Fetching data for system_a at 2026-04-26 18:36:42.832174
+2026-04-26T18:36:47.887019+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T18:36:47.887519+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T18:41:42.824246+0300 INFO Fetching data for system_a at 2026-04-26 18:41:42.824246
+2026-04-26T18:41:47.891803+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T18:41:47.892303+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T18:46:42.824141+0300 INFO Fetching data for system_a at 2026-04-26 18:46:42.824141
+2026-04-26T18:46:47.874874+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T18:46:47.875303+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T18:51:42.824286+0300 INFO Fetching data for system_a at 2026-04-26 18:51:42.824286
+2026-04-26T18:51:47.890409+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T18:51:47.890909+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T18:56:42.823614+0300 INFO Fetching data for system_a at 2026-04-26 18:56:42.823614
+2026-04-26T18:56:47.875967+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T18:56:47.876467+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T19:01:42.823928+0300 INFO Fetching data for system_a at 2026-04-26 19:01:42.823928
+2026-04-26T19:01:47.904983+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T19:01:47.905483+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T19:06:42.825441+0300 INFO Fetching data for system_a at 2026-04-26 19:06:42.825441
+2026-04-26T19:06:47.899078+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T19:06:47.899578+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T19:11:42.824299+0300 INFO Fetching data for system_a at 2026-04-26 19:11:42.824299
+2026-04-26T19:11:47.873263+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T19:11:47.873763+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T19:16:42.832012+0300 INFO Fetching data for system_a at 2026-04-26 19:16:42.832012
+2026-04-26T19:16:47.883765+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T19:16:47.884265+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T19:21:42.824683+0300 INFO Fetching data for system_a at 2026-04-26 19:21:42.824683
+2026-04-26T19:21:47.877619+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T19:21:47.878064+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T19:26:42.825063+0300 INFO Fetching data for system_a at 2026-04-26 19:26:42.825063
+2026-04-26T19:26:47.877347+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T19:26:47.877629+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T19:31:42.823923+0300 INFO Fetching data for system_a at 2026-04-26 19:31:42.823923
+2026-04-26T19:31:47.882804+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T19:31:47.883258+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T19:36:42.827257+0300 INFO Fetching data for system_a at 2026-04-26 19:36:42.827257
+2026-04-26T19:36:47.893725+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T19:36:47.894225+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T19:41:42.824544+0300 INFO Fetching data for system_a at 2026-04-26 19:41:42.824544
+2026-04-26T19:41:47.880140+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T19:41:47.880640+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T19:46:42.824419+0300 INFO Fetching data for system_a at 2026-04-26 19:46:42.824419
+2026-04-26T19:46:47.884966+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T19:46:47.885467+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T19:51:42.824892+0300 INFO Fetching data for system_a at 2026-04-26 19:51:42.824892
+2026-04-26T19:51:48.236650+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T19:51:48.237150+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T19:56:42.827609+0300 INFO Fetching data for system_a at 2026-04-26 19:56:42.827609
+2026-04-26T19:56:48.946089+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T19:56:48.946588+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T20:01:42.824799+0300 INFO Fetching data for system_a at 2026-04-26 20:01:42.824799
+2026-04-26T20:01:47.876016+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T20:01:47.876517+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T20:06:42.829542+0300 INFO Fetching data for system_a at 2026-04-26 20:06:42.829542
+2026-04-26T20:06:47.886021+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T20:06:47.887022+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T20:11:42.824543+0300 INFO Fetching data for system_a at 2026-04-26 20:11:42.824543
+2026-04-26T20:11:48.894859+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T20:11:48.895124+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T20:16:42.823683+0300 INFO Fetching data for system_a at 2026-04-26 20:16:42.823683
+2026-04-26T20:16:47.876780+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T20:16:47.877279+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T20:21:42.823888+0300 INFO Fetching data for system_a at 2026-04-26 20:21:42.823888
+2026-04-26T20:21:47.876920+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T20:21:47.877420+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T20:26:42.824628+0300 INFO Fetching data for system_a at 2026-04-26 20:26:42.824628
+2026-04-26T20:26:48.923060+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T20:26:48.923560+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T20:31:42.824368+0300 INFO Fetching data for system_a at 2026-04-26 20:31:42.824368
+2026-04-26T20:31:47.868015+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T20:31:47.868015+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T20:36:42.823833+0300 INFO Fetching data for system_a at 2026-04-26 20:36:42.823833
+2026-04-26T20:36:47.887828+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T20:36:47.888328+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T20:41:42.824336+0300 INFO Fetching data for system_a at 2026-04-26 20:41:42.824336
+2026-04-26T20:41:47.882824+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T20:41:47.883324+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T20:46:42.823817+0300 INFO Fetching data for system_a at 2026-04-26 20:46:42.823817
+2026-04-26T20:46:47.878793+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T20:46:47.879293+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T20:51:42.823842+0300 INFO Fetching data for system_a at 2026-04-26 20:51:42.823842
+2026-04-26T20:51:47.881992+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T20:51:47.882492+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T20:56:42.823830+0300 INFO Fetching data for system_a at 2026-04-26 20:56:42.823830
+2026-04-26T20:56:48.929669+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T20:56:48.930191+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T21:01:42.830130+0300 INFO Fetching data for system_a at 2026-04-26 21:01:42.830130
+2026-04-26T21:01:47.902746+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T21:01:47.903246+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T21:06:42.824174+0300 INFO Fetching data for system_a at 2026-04-26 21:06:42.824174
+2026-04-26T21:06:47.871224+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T21:06:47.871673+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T21:11:42.825605+0300 INFO Fetching data for system_a at 2026-04-26 21:11:42.825605
+2026-04-26T21:11:47.882121+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T21:11:47.882621+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T21:16:42.823711+0300 INFO Fetching data for system_a at 2026-04-26 21:16:42.823711
+2026-04-26T21:16:49.261292+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T21:16:49.261792+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T21:21:42.829617+0300 INFO Fetching data for system_a at 2026-04-26 21:21:42.829617
+2026-04-26T21:21:48.241649+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T21:21:48.242149+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T21:26:42.881437+0300 INFO Fetching data for system_a at 2026-04-26 21:26:42.881437
+2026-04-26T21:26:48.303655+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T21:26:48.304107+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T21:31:42.901757+0300 INFO Fetching data for system_a at 2026-04-26 21:31:42.901757
+2026-04-26T21:31:45.135737+0300 ERROR Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T21:31:45.136237+0300 ERROR Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T21:36:42.897476+0300 INFO Fetching data for system_a at 2026-04-26 21:36:42.897476
+2026-04-26T21:36:45.579154+0300 ERROR Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T21:36:45.579654+0300 ERROR Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T21:41:42.901725+0300 INFO Fetching data for system_a at 2026-04-26 21:41:42.901725
+2026-04-26T21:41:45.130019+0300 ERROR Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T21:41:45.130519+0300 ERROR Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T21:46:42.875120+0300 INFO Fetching data for system_a at 2026-04-26 21:46:42.875120
+2026-04-26T21:46:45.107259+0300 ERROR Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T21:46:45.107759+0300 ERROR Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T21:51:42.878342+0300 INFO Fetching data for system_a at 2026-04-26 21:51:42.878342
+2026-04-26T21:51:45.103160+0300 ERROR Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T21:51:45.103661+0300 ERROR Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T21:56:42.880645+0300 INFO Fetching data for system_a at 2026-04-26 21:56:42.880645
+2026-04-26T21:56:45.564816+0300 ERROR Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T21:56:45.565317+0300 ERROR Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T22:01:42.865180+0300 INFO Fetching data for system_a at 2026-04-26 22:01:42.865180
+2026-04-26T22:01:45.090886+0300 ERROR Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T22:01:45.091386+0300 ERROR Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T22:06:42.867058+0300 INFO Fetching data for system_a at 2026-04-26 22:06:42.867058
+2026-04-26T22:06:45.094265+0300 ERROR Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T22:06:45.094766+0300 ERROR Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T22:11:42.865293+0300 INFO Fetching data for system_a at 2026-04-26 22:11:42.865293
+2026-04-26T22:11:45.096001+0300 ERROR Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T22:11:45.097001+0300 ERROR Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T22:16:42.863716+0300 INFO Fetching data for system_a at 2026-04-26 22:16:42.863716
+2026-04-26T22:16:45.092843+0300 ERROR Error fetching data from System A: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T22:16:45.093342+0300 ERROR Error fetching data for system_a: Cannot connect to host 91.132.57.66:9090 ssl:default [Удаленный компьютер отклонил это сетевое подключение]
+2026-04-26T22:21:42.854539+0300 INFO Fetching data for system_a at 2026-04-26 22:21:42.854539
+2026-04-26T22:21:45.242589+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T22:21:45.243090+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T22:26:42.856031+0300 INFO Fetching data for system_a at 2026-04-26 22:26:42.856031
+2026-04-26T22:26:45.248140+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T22:26:45.248640+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T22:31:42.865413+0300 INFO Fetching data for system_a at 2026-04-26 22:31:42.865413
+2026-04-26T22:31:45.262844+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T22:31:45.263343+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T22:36:42.836185+0300 INFO Fetching data for system_a at 2026-04-26 22:36:42.836185
+2026-04-26T22:36:45.228205+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T22:36:45.228706+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T22:41:42.843344+0300 INFO Fetching data for system_a at 2026-04-26 22:41:42.843344
+2026-04-26T22:41:45.233702+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T22:41:45.234701+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T22:46:42.851000+0300 INFO Fetching data for system_a at 2026-04-26 22:46:42.851000
+2026-04-26T22:46:45.242664+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T22:46:45.243163+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T22:51:42.847512+0300 INFO Fetching data for system_a at 2026-04-26 22:51:42.847512
+2026-04-26T22:51:45.238116+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T22:51:45.238616+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T22:56:42.840035+0300 INFO Fetching data for system_a at 2026-04-26 22:56:42.840035
+2026-04-26T22:56:45.238737+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T22:56:45.239238+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T23:01:42.846209+0300 INFO Fetching data for system_a at 2026-04-26 23:01:42.846209
+2026-04-26T23:01:45.250918+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T23:01:45.251418+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T23:06:42.840917+0300 INFO Fetching data for system_a at 2026-04-26 23:06:42.840917
+2026-04-26T23:06:45.230655+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T23:06:45.231155+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T23:11:42.829707+0300 INFO Fetching data for system_a at 2026-04-26 23:11:42.829707
+2026-04-26T23:11:45.215603+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T23:11:45.216091+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T23:16:42.834872+0300 INFO Fetching data for system_a at 2026-04-26 23:16:42.834872
+2026-04-26T23:16:45.224283+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T23:16:45.224784+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T23:21:42.832856+0300 INFO Fetching data for system_a at 2026-04-26 23:21:42.832856
+2026-04-26T23:21:45.218238+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T23:21:45.218738+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T23:26:42.828890+0300 INFO Fetching data for system_a at 2026-04-26 23:26:42.828890
+2026-04-26T23:26:45.216712+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T23:26:45.217212+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T23:31:42.833994+0300 INFO Fetching data for system_a at 2026-04-26 23:31:42.833994
+2026-04-26T23:31:45.230615+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T23:31:45.231116+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T23:36:42.826161+0300 INFO Fetching data for system_a at 2026-04-26 23:36:42.826161
+2026-04-26T23:36:45.216800+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T23:36:45.217300+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T23:41:42.843137+0300 INFO Fetching data for system_a at 2026-04-26 23:41:42.843137
+2026-04-26T23:41:45.233983+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T23:41:45.234483+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T23:46:42.828315+0300 INFO Fetching data for system_a at 2026-04-26 23:46:42.828315
+2026-04-26T23:46:45.220437+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T23:46:45.220938+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T23:51:42.824216+0300 INFO Fetching data for system_a at 2026-04-26 23:51:42.824216
+2026-04-26T23:51:45.220470+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T23:51:45.220470+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-26T23:56:42.831243+0300 INFO Fetching data for system_a at 2026-04-26 23:56:42.831243
+2026-04-26T23:56:45.215866+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-26T23:56:45.216366+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-27T00:01:42.823670+0300 INFO Fetching data for system_a at 2026-04-27 00:01:42.823670
+2026-04-27T00:01:45.219942+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-27T00:01:45.219942+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-27T00:06:42.845089+0300 INFO Fetching data for system_a at 2026-04-27 00:06:42.845089
+2026-04-27T00:06:45.234857+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-27T00:06:45.235357+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-27T00:11:42.827556+0300 INFO Fetching data for system_a at 2026-04-27 00:11:42.827556
+2026-04-27T00:11:45.213487+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-27T00:11:45.214005+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-27T00:16:42.831833+0300 INFO Fetching data for system_a at 2026-04-27 00:16:42.831833
+2026-04-27T00:16:46.214093+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-27T00:16:46.214594+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-27T00:21:42.833147+0300 INFO Fetching data for system_a at 2026-04-27 00:21:42.833147
+2026-04-27T00:21:45.222941+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-27T00:21:45.223442+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-27T00:26:42.827204+0300 INFO Fetching data for system_a at 2026-04-27 00:26:42.827204
+2026-04-27T00:26:45.224338+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-27T00:26:45.224840+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-27T00:31:42.827598+0300 INFO Fetching data for system_a at 2026-04-27 00:31:42.827598
+2026-04-27T00:31:45.212458+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-27T00:31:45.213457+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-27T00:36:42.837723+0300 INFO Fetching data for system_a at 2026-04-27 00:36:42.837723
+2026-04-27T00:36:45.222598+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-27T00:36:45.223099+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-27T00:41:42.823684+0300 INFO Fetching data for system_a at 2026-04-27 00:41:42.823684
+2026-04-27T00:41:45.210219+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-27T00:41:45.210720+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-27T00:46:42.828859+0300 INFO Fetching data for system_a at 2026-04-27 00:46:42.828859
+2026-04-27T00:46:45.220369+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-27T00:46:45.220870+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-27T00:51:42.823700+0300 INFO Fetching data for system_a at 2026-04-27 00:51:42.823700
+2026-04-27T00:51:46.209544+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-27T00:51:46.210044+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-27T00:56:42.824045+0300 INFO Fetching data for system_a at 2026-04-27 00:56:42.824045
+2026-04-27T00:56:45.213102+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-27T00:56:45.213603+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-27T01:01:42.827771+0300 INFO Fetching data for system_a at 2026-04-27 01:01:42.827771
+2026-04-27T01:01:45.217162+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-27T01:01:45.217162+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-27T01:06:42.827897+0300 INFO Fetching data for system_a at 2026-04-27 01:06:42.827897
+2026-04-27T01:06:45.213917+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-27T01:06:45.214418+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-27T01:11:42.824275+0300 INFO Fetching data for system_a at 2026-04-27 01:11:42.824275
+2026-04-27T01:11:45.218108+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-27T01:11:45.218608+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-27T01:16:42.824561+0300 INFO Fetching data for system_a at 2026-04-27 01:16:42.824561
+2026-04-27T01:16:45.215480+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-27T01:16:45.215980+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-27T01:21:42.828180+0300 INFO Fetching data for system_a at 2026-04-27 01:21:42.828180
+2026-04-27T01:21:45.209214+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-27T01:21:45.209713+0300 ERROR Error fetching data for system_a: Server disconnected
+2026-04-27T01:26:42.830422+0300 INFO Fetching data for system_a at 2026-04-27 01:26:42.830422
+2026-04-27T01:26:45.216067+0300 ERROR Error fetching data from System A: Server disconnected
+2026-04-27T01:26:45.216554+0300 ERROR Error fetching data for system_a: Server disconnected
