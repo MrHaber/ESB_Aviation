@@ -1,9 +1,8 @@
-# Tests
+# Результаты Unit тестов
 
-Дата проверки: 2026-05-11.
 
 ## Команда запуска
-
+Windows
 ```powershell
 python -B -m unittest discover -s tests -v
 ```
