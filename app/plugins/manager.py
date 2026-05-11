@@ -114,8 +114,8 @@ class PluginManager:
         plugin = cls.plugins[plugin_name]
         return (callable(getattr(plugin, 'start', None)) and
                 callable(getattr(plugin, 'stop', None)) and
-                plugin.start != BasePlugin.start and
-                plugin.stop != BasePlugin.stop)
+                type(plugin).start is not BasePlugin.start and
+                type(plugin).stop is not BasePlugin.stop)
 
     @classmethod
     async def unload_plugin(cls, plugin_name: str) -> Dict[str, str]:

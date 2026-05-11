@@ -12,7 +12,13 @@ def create_jwt_token(data: dict):
     to_encode = data.copy()
     expire = datetime.utcnow() + timedelta(days=settings.JWT_EXPIRY_DAYS)
 
-    user_role = Role.ADMIN.value if data["username"] == "admin" else Role.USER.value
+    username = data.get("username") or data.get("sub")
+    requested_role = data.get("role")
+    valid_roles = {role.value for role in Role}
+    user_role = Role.ADMIN.value if username == "admin" else requested_role
+    if user_role not in valid_roles:
+        user_role = Role.USER.value
+
     to_encode.update({
         "exp": expire,
         "role": user_role

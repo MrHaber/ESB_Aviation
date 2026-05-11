@@ -69,6 +69,41 @@ class AviationApiTests(unittest.TestCase):
         self.assertEqual(200, overview_response.status_code)
         self.assertEqual(1, overview_response.json()["total_messages"])
 
+    def test_backend_returns_not_found_for_missing_message_and_route(self) -> None:
+        get_response = self.client.get("/api/v1/aviation/messages/missing")
+        route_response = self.client.post("/api/v1/aviation/messages/missing/route")
+
+        self.assertEqual(404, get_response.status_code)
+        self.assertEqual("Aviation message not found", get_response.json()["detail"])
+        self.assertEqual(404, route_response.status_code)
+        self.assertEqual("Aviation message not found", route_response.json()["detail"])
+
+    def test_backend_routes_inline_message_without_persisting_decision(self) -> None:
+        route_response = self.client.post("/api/v1/aviation/route", json=self.message_payload("inline-001"))
+        routes_response = self.client.get("/api/v1/aviation/routes")
+
+        self.assertEqual(200, route_response.status_code)
+        self.assertEqual("inline-001", route_response.json()["message_id"])
+        self.assertIn("flight_dispatch", route_response.json()["destinations"])
+        self.assertEqual([], routes_response.json())
+
+    def test_backend_filters_messages_by_priority_and_airport(self) -> None:
+        urgent_payload = self.message_payload("urgent-001")
+        urgent_payload["priority"] = "URGENT"
+        urgent_payload["destination_airport"] = "EDDF"
+        normal_payload = self.message_payload("normal-001")
+        normal_payload["origin_airport"] = "ULLI"
+        normal_payload["destination_airport"] = "UUEE"
+
+        self.client.post("/api/v1/aviation/messages", json=urgent_payload)
+        self.client.post("/api/v1/aviation/messages", json=normal_payload)
+
+        urgent_response = self.client.get("/api/v1/aviation/messages?priority=urgent")
+        airport_response = self.client.get("/api/v1/aviation/messages?airport=UUEE")
+
+        self.assertEqual(["urgent-001"], [item["message_id"] for item in urgent_response.json()])
+        self.assertEqual(["normal-001"], [item["message_id"] for item in airport_response.json()])
+
     def test_backend_generates_and_imports_public_real_messages(self) -> None:
         generate_response = self.client.post(
             "/api/v1/aviation/synthetic/generate?count=30&seed=3&include_real_data=true"
