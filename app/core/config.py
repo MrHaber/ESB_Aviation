@@ -5,9 +5,17 @@ except Exception:
         pass
 import os
 from dotenv import load_dotenv
+from pathlib import Path
 from typing import Optional
 
-load_dotenv()
+load_dotenv(Path(__file__).with_name(".env"), override=False)
+
+def env_bool(name: str, default: bool = False) -> bool:
+    value = os.getenv(name)
+    if value is None:
+        return default
+    return value.strip().lower() in {"1", "true", "yes", "on"}
+
 class Settings(BaseSettings):
 
     DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql://esb_admin:25565@localhost:5432/esb_db").strip()
@@ -27,7 +35,7 @@ class Settings(BaseSettings):
 
     # раздел для LDAP
 
-    LDAP_ENABLED: bool = bool(os.getenv("LDAP_ENABLED", "False").strip())
+    LDAP_ENABLED: bool = env_bool("LDAP_ENABLED", False)
     LDAP_SERVER: str = os.getenv("LDAP_SERVER", "ldap://91.132.57.66:389").strip()
     LDAP_BASE_DN: str = os.getenv("LDAP_BASE_DN", "dc=fvds,dc=ru").strip()
     LDAP_USER_DN: str = os.getenv("LDAP_USER_DN", "cn=admin,dc=fvds,dc=ru").strip()
@@ -38,7 +46,7 @@ class Settings(BaseSettings):
     # раздел для кафки, я не знаю что с ним делать
     # параметры для access management и SASL были взяты отсюда:
     # https://docs.arenadata.io/en/ADStreaming/current/how-to/kafka/access_management/authentication/sasl_plain.html
-    KAFKA_ENABLED: bool = bool(os.getenv("KAFKA_ENABLED", "True").strip().lower() == "true")
+    KAFKA_ENABLED: bool = env_bool("KAFKA_ENABLED", True)
     KAFKA_BOOTSTRAP_SERVERS: str = os.getenv("KAFKA_BOOTSTRAP_SERVERS", "localhost:9092").strip()
     KAFKA_SECURITY_PROTOCOL: str = os.getenv("KAFKA_SECURITY_PROTOCOL", "PLAINTEXT").strip()
     KAFKA_SASL_MECHANISM: Optional[str] = os.getenv("KAFKA_SASL_MECHANISM", "").strip() or None

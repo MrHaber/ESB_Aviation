@@ -1,0 +1,56 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: esb-aviation-api
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file:
+      - ./app/core/.env
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/openapi.json"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    volumes:
+      - aviation_resources:/app/resources
+      - app_logs:/app/app/logs
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: esb-aviation-postgres
+    restart: unless-stopped
+    env_file:
+      - ./app/core/.env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  prometheus:
+    image: prom/prometheus:v2.53.1
+    container_name: esb-aviation-prometheus
+    restart: unless-stopped
+    depends_on:
+      app:
+        condition: service_healthy
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./docker/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+
+volumes:
+  aviation_resources:
+  app_logs:
+  postgres_data:
+  prometheus_data:
