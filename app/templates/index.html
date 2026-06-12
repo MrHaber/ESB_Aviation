@@ -3,490 +3,1536 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESB Aviation</title>
+    <title>ESB Aviation Operations Console</title>
+    <link rel="icon" href="data:,">
     <style>
         :root {
-            --bg: #f6f8fb;
-            --ink: #17212b;
-            --muted: #65758b;
-            --line: #d8e0ea;
-            --panel: #ffffff;
-            --accent: #146c94;
-            --accent-2: #2f7d4f;
-            --warn: #a34d18;
+            --bg: #eef3f7;
+            --surface: #ffffff;
+            --surface-soft: #f7fafc;
+            --surface-strong: #e8f0f5;
+            --ink: #14212b;
+            --muted: #627386;
+            --line: #d5e0e8;
+            --line-strong: #b9c8d4;
+            --accent: #0f6f8f;
+            --accent-dark: #0c526a;
+            --success: #2f7d4f;
+            --warning: #b56a17;
+            --critical: #b04435;
             --danger: #9f243d;
+            --info: #245b9f;
+            --shadow: 0 14px 34px rgba(24, 42, 56, 0.09);
+            --radius: 8px;
         }
 
         * {
             box-sizing: border-box;
         }
 
+        html {
+            min-width: 0;
+        }
+
         body {
             margin: 0;
             background: var(--bg);
             color: var(--ink);
-            font-family: Inter, Segoe UI, Arial, sans-serif;
+            font-family: Inter, "Segoe UI", Arial, sans-serif;
+            font-size: 18px;
             letter-spacing: 0;
         }
 
-        header {
-            background: #0f2837;
-            color: white;
-            padding: 22px 28px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 28px;
-            font-weight: 700;
-        }
-
-        header p {
-            margin: 6px 0 0;
-            color: #c6d6df;
-            font-size: 14px;
-        }
-
-        main {
-            display: grid;
-            grid-template-columns: 320px 1fr;
-            min-height: calc(100vh - 86px);
-        }
-
-        aside {
-            border-right: 1px solid var(--line);
-            background: #eef3f7;
-            padding: 18px;
-        }
-
-        section {
-            padding: 18px 22px;
-        }
-
-        h2 {
-            margin: 0 0 12px;
-            font-size: 18px;
-        }
-
-        h3 {
-            margin: 18px 0 8px;
-            font-size: 14px;
-            color: var(--muted);
-            text-transform: uppercase;
-        }
-
-        .toolbar, .form-grid {
-            display: grid;
-            gap: 10px;
-        }
-
-        .form-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        label {
-            display: grid;
-            gap: 5px;
-            font-size: 12px;
-            color: var(--muted);
-        }
-
-        input, select, textarea {
-            width: 100%;
-            min-height: 38px;
-            border: 1px solid var(--line);
-            border-radius: 6px;
-            padding: 8px 10px;
+        button,
+        input,
+        select,
+        textarea {
             font: inherit;
-            background: white;
+        }
+
+        button {
+            min-height: 46px;
+            border: 1px solid transparent;
+            border-radius: 7px;
+            padding: 11px 14px;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 150ms ease, border-color 150ms ease, transform 150ms ease;
+        }
+
+        button:hover {
+            background: var(--accent-dark);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        button:disabled {
+            cursor: not-allowed;
+            opacity: 0.62;
+        }
+
+        button.secondary {
+            background: #f2f7fa;
+            border-color: var(--line);
+            color: var(--ink);
+        }
+
+        button.secondary:hover {
+            background: #e7f0f5;
+        }
+
+        button.warning {
+            background: var(--warning);
+        }
+
+        button.danger {
+            background: var(--danger);
+        }
+
+        button.row-button {
+            width: 100%;
+            min-height: unset;
+            border: 0;
+            border-radius: 0;
+            padding: 0;
+            background: transparent;
+            color: inherit;
+            text-align: left;
+        }
+
+        button.row-button:hover {
+            background: transparent;
+        }
+
+        a,
+        button,
+        input,
+        select,
+        textarea {
+            outline-offset: 3px;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid rgba(15, 111, 143, 0.28);
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            min-height: 46px;
+            border: 1px solid var(--line);
+            border-radius: 7px;
+            padding: 10px 12px;
+            background: #fff;
             color: var(--ink);
         }
 
         textarea {
-            min-height: 92px;
+            min-height: 116px;
             resize: vertical;
-            grid-column: 1 / -1;
+            line-height: 1.45;
+            font-family: "Cascadia Mono", Consolas, monospace;
+            font-size: 14px;
         }
 
-        button {
-            border: 0;
-            border-radius: 6px;
-            padding: 10px 12px;
-            background: var(--accent);
-            color: white;
-            font-weight: 650;
-            cursor: pointer;
-        }
-
-        button.secondary {
-            background: var(--accent-2);
-        }
-
-        button.warning {
-            background: var(--warn);
-        }
-
-        .stats {
+        label {
             display: grid;
-            grid-template-columns: repeat(4, minmax(140px, 1fr));
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-
-        .stat, .message, .route, .decision {
-            background: var(--panel);
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            padding: 12px;
-        }
-
-        .stat strong {
-            display: block;
-            font-size: 28px;
-        }
-
-        .stat span, .meta {
+            gap: 6px;
             color: var(--muted);
-            font-size: 12px;
+            font-size: 14px;
+            font-weight: 700;
         }
 
-        .layout {
+        .app-shell {
+            min-height: 100vh;
             display: grid;
-            grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.8fr);
+            grid-template-rows: auto 1fr;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 16px;
+            align-items: center;
+            border-bottom: 1px solid #173648;
+            background: #0f2837;
+            color: #fff;
+            padding: 14px 22px;
         }
 
-        .list {
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            min-width: 0;
+        }
+
+        .brand-mark {
+            width: 42px;
+            height: 42px;
             display: grid;
-            gap: 10px;
+            place-items: center;
+            border-radius: 8px;
+            background: #d9edf7;
+            color: #0f2837;
+            font-weight: 900;
         }
 
-        .message {
-            cursor: pointer;
+        .brand h1 {
+            margin: 0;
+            font-size: 27px;
+            line-height: 1.1;
         }
 
-        .message.active {
-            border-color: var(--accent);
-            outline: 2px solid rgba(20, 108, 148, 0.12);
+        .brand p {
+            margin: 4px 0 0;
+            color: #bcd0dc;
+            font-size: 15px;
         }
 
-        .row {
+        .topbar-meta {
+            display: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .status-pill,
+        .chip,
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            min-height: 26px;
+            border-radius: 999px;
+            padding: 4px 9px;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .status-pill {
+            background: rgba(255, 255, 255, 0.12);
+            color: #dcebf3;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--line-strong);
+        }
+
+        .status-dot.ok {
+            background: #62c587;
+        }
+
+        .status-dot.warn {
+            background: #f0b761;
+        }
+
+        .status-dot.error {
+            background: #ff7b8f;
+        }
+
+        .workspace {
+            display: grid;
+            grid-template-columns: 342px minmax(560px, 1fr) minmax(390px, 470px);
+            gap: 16px;
+            padding: 16px;
+            min-height: 0;
+        }
+
+        .panel,
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .panel {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            min-height: 0;
+        }
+
+        .panel-header {
             display: flex;
             justify-content: space-between;
             gap: 12px;
             align-items: center;
+            padding: 13px 14px;
+            border-bottom: 1px solid var(--line);
         }
 
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            min-height: 24px;
-            border-radius: 999px;
-            padding: 3px 9px;
-            background: #e5edf3;
-            color: #27475b;
-            font-size: 12px;
+        .panel-header h2,
+        .panel-header h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .panel-body {
+            padding: 14px;
+            overflow: auto;
+            min-height: 0;
+        }
+
+        .left-rail {
+            gap: 12px;
+            box-shadow: none;
+            border: 0;
+            background: transparent;
+        }
+
+        .rail-section {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .rail-title {
+            margin: 0 0 10px;
+            color: var(--ink);
+            font-size: 15px;
+            text-transform: uppercase;
+        }
+
+        .stack {
+            display: grid;
+            gap: 10px;
+        }
+
+        .actions-grid,
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        .actions-grid button:first-child {
+            grid-column: 1 / -1;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(120px, 1fr));
+            gap: 10px;
+            padding: 14px;
+            border-bottom: 1px solid var(--line);
+            background: var(--surface-soft);
+        }
+
+        .stat {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: #fff;
+            padding: 10px;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 29px;
+            line-height: 1.05;
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 14px;
             font-weight: 700;
         }
 
-        .badge.urgent, .badge.critical {
+        .distribution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 0 14px 14px;
+            background: var(--surface-soft);
+        }
+
+        .mini-chart {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: #fff;
+            padding: 10px;
+            min-width: 0;
+        }
+
+        .mini-chart h3 {
+            margin: 0 0 8px;
+            color: var(--muted);
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .bar-row {
+            display: grid;
+            grid-template-columns: 74px 1fr 34px;
+            gap: 8px;
+            align-items: center;
+            min-height: 28px;
+            font-size: 14px;
+        }
+
+        .bar-track {
+            height: 8px;
+            overflow: hidden;
+            border-radius: 999px;
+            background: var(--surface-strong);
+        }
+
+        .bar-fill {
+            height: 100%;
+            width: 0;
+            border-radius: inherit;
+            background: var(--accent);
+        }
+
+        .source-wrap,
+        .chip-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .chip {
+            background: #edf4f8;
+            color: #27475b;
+        }
+
+        .chip.destination {
+            background: #e7f4ec;
+            color: #245b3a;
+        }
+
+        .chip.reason {
+            align-items: flex-start;
+            border-radius: 7px;
+            background: #fff8e9;
+            color: #6d430d;
+            white-space: normal;
+            line-height: 1.35;
+        }
+
+        .badge {
+            background: #e5edf3;
+            color: #27475b;
+        }
+
+        .badge.normal,
+        .badge.standard {
+            background: #e8f0f5;
+            color: #315466;
+        }
+
+        .badge.urgent {
             background: #fff0dc;
-            color: var(--warn);
+            color: #89500e;
+        }
+
+        .badge.critical {
+            background: #fde8e3;
+            color: #8c3529;
         }
 
         .badge.distress {
             background: #ffe4e9;
-            color: var(--danger);
+            color: #8d2037;
         }
 
-        pre {
+        .badge.routed {
+            background: #e3f4ea;
+            color: #245b3a;
+        }
+
+        .badge.unrouted {
+            background: #eef3f7;
+            color: #667687;
+        }
+
+        .table-shell {
             overflow: auto;
-            max-height: 300px;
-            padding: 12px;
-            background: #101820;
-            color: #d9edf7;
-            border-radius: 8px;
-            font-size: 12px;
+            min-height: 300px;
         }
 
-        .split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
+        .message-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            table-layout: fixed;
+            font-size: 15px;
         }
 
-        .status {
-            min-height: 20px;
-            margin-top: 10px;
+        .message-table th {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            border-bottom: 1px solid var(--line);
+            background: #f5f9fb;
             color: var(--muted);
-            font-size: 13px;
+            font-size: 12px;
+            text-align: left;
+            text-transform: uppercase;
         }
 
-        @media (max-width: 980px) {
-            main, .layout, .stats, .form-grid {
+        .message-table th,
+        .message-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #e8eef3;
+            vertical-align: middle;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .message-table tr {
+            cursor: pointer;
+        }
+
+        .message-table tr:hover td {
+            background: #f7fbfd;
+        }
+
+        .message-table tr.active td {
+            background: #dfeef5;
+            box-shadow: none;
+        }
+
+        .message-table tr.active td:first-child {
+            border-left: 4px solid var(--accent);
+            border-top-left-radius: 7px;
+            border-bottom-left-radius: 7px;
+        }
+
+        .message-table tr.active td:last-child {
+            border-top-right-radius: 7px;
+            border-bottom-right-radius: 7px;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        .strong {
+            font-weight: 800;
+        }
+
+        .small {
+            font-size: 14px;
+        }
+
+        .mono {
+            font-family: "Cascadia Mono", Consolas, monospace;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 9px;
+        }
+
+        .detail-grid .wide {
+            grid-column: 1 / -1;
+        }
+
+        .side-panel {
+            gap: 12px;
+            box-shadow: none;
+            border: 0;
+            background: transparent;
+        }
+
+        .decision-card,
+        .recent-route {
+            display: grid;
+            gap: 10px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--surface-soft);
+            padding: 11px;
+        }
+
+        .decision-header,
+        .recent-route-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .key-value {
+            display: grid;
+            gap: 4px;
+        }
+
+        .key-value span:first-child {
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .key-value span:last-child {
+            overflow-wrap: anywhere;
+        }
+
+        .notice {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 10px;
+            background: #f8fbfd;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.45;
+        }
+
+        .notice.error {
+            border-color: #f2bcc8;
+            background: #fff1f4;
+            color: #8d2037;
+        }
+
+        .notice.success {
+            border-color: #b7dbc4;
+            background: #effaf3;
+            color: #245b3a;
+        }
+
+        .toast {
+            min-height: 38px;
+            display: grid;
+            align-items: center;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 9px 11px;
+            background: #fff;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.35;
+        }
+
+        .toast.success {
+            border-color: #b7dbc4;
+            color: #245b3a;
+            background: #effaf3;
+        }
+
+        .toast.error {
+            border-color: #f2bcc8;
+            color: #8d2037;
+            background: #fff1f4;
+        }
+
+        .toast.loading {
+            border-color: #b5d3df;
+            color: #174d62;
+            background: #eef8fb;
+        }
+
+        .empty {
+            display: grid;
+            place-items: center;
+            min-height: 180px;
+            color: var(--muted);
+            text-align: center;
+            padding: 24px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        @media (max-width: 1220px) {
+            .workspace {
+                grid-template-columns: 288px minmax(0, 1fr);
+            }
+
+            .side-panel {
+                grid-column: 1 / -1;
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            }
+        }
+
+        @media (max-width: 860px) {
+            .topbar {
+                position: static;
                 grid-template-columns: 1fr;
             }
 
-            aside {
-                border-right: 0;
-                border-bottom: 1px solid var(--line);
+            .topbar-meta {
+                justify-content: flex-start;
+            }
+
+            .workspace,
+            .side-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-grid,
+            .distribution,
+            .detail-grid,
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .message-table {
+                min-width: 760px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .topbar,
+            .workspace {
+                padding: 10px;
+            }
+
+            .brand {
+                align-items: flex-start;
+            }
+
+            .actions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+                scroll-behavior: auto !important;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>ESB Aviation</h1>
-        <p>Контекстно-зависимая маршрутизация авиаоперационных сообщений</p>
-    </header>
-
-    <main>
-        <aside>
-            <h2>Панель</h2>
-            <div class="toolbar">
-                <button id="refresh">Обновить</button>
-                <button id="generate" class="secondary">Синтетика + real</button>
-                <button id="importReal" class="warning">Импорт real</button>
-            </div>
-
-            <h3>Фильтр</h3>
-            <label>Тип
-                <select id="typeFilter">
-                    <option value="">Все</option>
-                    <option>FPL</option>
-                    <option>DLA</option>
-                    <option>CNL</option>
-                    <option>CHG</option>
-                    <option>MVT</option>
-                    <option>LDM</option>
-                    <option>CPM</option>
-                    <option>NOTAM</option>
-                    <option>METAR</option>
-                    <option>TAF</option>
-                    <option>SIGMET</option>
-                    <option>SECURITY</option>
-                </select>
-            </label>
-            <label>Приоритет
-                <select id="priorityFilter">
-                    <option value="">Все</option>
-                    <option>NORMAL</option>
-                    <option>URGENT</option>
-                    <option>CRITICAL</option>
-                    <option>DISTRESS</option>
-                </select>
-            </label>
-            <label>Аэропорт
-                <input id="airportFilter" placeholder="UUDD">
-            </label>
-
-            <h3>Сообщение</h3>
-            <div class="form-grid">
-                <label>ID<input id="messageId"></label>
-                <label>Тип<input id="messageType" value="MVT"></label>
-                <label>Приоритет<input id="priority" value="NORMAL"></label>
-                <label>Рейс<input id="flightNumber" value="ESB900"></label>
-                <label>Откуда<input id="origin" value="UUDD"></label>
-                <label>Куда<input id="destination" value="ULLI"></label>
-                <label>Оператор<input id="operator" value="ESB Air"></label>
-                <label>Борт<input id="registration" value="RA-90000"></label>
-                <textarea id="payload">{"event":"operational_update"}</textarea>
-                <textarea id="context">{"flight_phase":"turnaround","weather_severity":0,"source_system":"DEMO"}</textarea>
-            </div>
-            <div class="split">
-                <button id="createMessage">POST</button>
-                <button id="updateMessage" class="secondary">UPDATE</button>
-            </div>
-            <div id="status" class="status"></div>
-        </aside>
-
-        <section>
-            <div class="stats" id="stats"></div>
-            <div class="layout">
+    <div class="app-shell">
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-mark" aria-hidden="true">ESB</div>
                 <div>
-                    <h2>Сообщения</h2>
-                    <div id="messages" class="list"></div>
+                    <h1>ESB Aviation</h1>
+                    <p>Контекстная маршрутизация авиаоперационных сообщений</p>
                 </div>
-                <div>
-                    <h2>Маршрут</h2>
-                    <div class="route">
-                        <button id="routeSelected">Построить маршрут</button>
-                        <pre id="decision">{}</pre>
+            </div>
+            <div class="topbar-meta">
+                <span class="status-pill"><span id="apiDot" class="status-dot warn"></span><span id="apiStatus">API проверяется</span></span>
+                <span class="status-pill"><span id="datasetStatus">SQLite dataset</span></span>
+                <span class="status-pill"><span id="topCounts">0 messages / 0 routes</span></span>
+                <span class="status-pill"><span id="lastUpdated">Нет обновления</span></span>
+            </div>
+        </header>
+
+        <main class="workspace">
+            <aside class="panel left-rail" aria-label="Фильтры и действия">
+                <section class="rail-section">
+                    <h2 class="rail-title">Данные</h2>
+                    <div class="actions-grid">
+                        <button id="refreshButton" type="button">Обновить</button>
+                        <button id="generateButton" class="warning" type="button">Синтетика + real</button>
+                        <button id="importButton" class="secondary" type="button">Импорт FAA/AWC</button>
                     </div>
-                    <h2 style="margin-top: 18px;">Решения</h2>
-                    <div id="routes" class="list"></div>
+                </section>
+
+                <section class="rail-section">
+                    <h2 class="rail-title">Фильтры</h2>
+                    <div class="stack">
+                        <label for="searchFilter">Поиск
+                            <input id="searchFilter" autocomplete="off" placeholder="ESB900, UUDD, operator">
+                        </label>
+                        <label for="typeFilter">Тип сообщения
+                            <select id="typeFilter"></select>
+                        </label>
+                        <label for="priorityFilter">Приоритет
+                            <select id="priorityFilter"></select>
+                        </label>
+                        <label for="airportFilter">Аэропорт
+                            <input id="airportFilter" autocomplete="off" maxlength="4" placeholder="UUDD">
+                        </label>
+                        <label for="sourceFilter">Источник
+                            <select id="sourceFilter"></select>
+                        </label>
+                        <label for="phaseFilter">Фаза рейса
+                            <select id="phaseFilter"></select>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="rail-section">
+                    <h2 class="rail-title">Статус</h2>
+                    <div id="statusMessage" class="toast" role="status" aria-live="polite">Инициализация интерфейса</div>
+                </section>
+            </aside>
+
+            <section class="panel" aria-label="Рабочая очередь сообщений">
+                <div class="stat-grid" id="statGrid"></div>
+                <div class="distribution">
+                    <div class="mini-chart">
+                        <h3>Priority</h3>
+                        <div id="priorityBars" class="stack"></div>
+                    </div>
+                    <div class="mini-chart">
+                        <h3>Sources</h3>
+                        <div id="sourceChips" class="source-wrap"></div>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
+                <div class="panel-header">
+                    <div>
+                        <h2>Очередь сообщений</h2>
+                        <div id="queueMeta" class="muted small">0 записей</div>
+                    </div>
+                    <span id="selectedBadge" class="badge unrouted">Нет выбора</span>
+                </div>
+                <div class="panel-body table-shell">
+                    <table class="message-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 96px;">Priority</th>
+                                <th style="width: 84px;">Type</th>
+                                <th style="width: 110px;">Flight</th>
+                                <th style="width: 132px;">Route</th>
+                                <th>Operator / Source</th>
+                                <th style="width: 120px;">Event</th>
+                                <th style="width: 96px;">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="messageRows"></tbody>
+                    </table>
+                    <div id="emptyMessages" class="empty" hidden>Сообщения не найдены. Измените фильтры или сгенерируйте демонстрационный dataset.</div>
+                </div>
+            </section>
+
+            <aside class="panel side-panel" aria-label="Детали и маршрутизация">
+                <section class="panel">
+                    <div class="panel-header">
+                        <h2>Сообщение</h2>
+                        <button id="resetButton" type="button" class="secondary">Сбросить</button>
+                    </div>
+                    <div class="panel-body stack">
+                        <div class="detail-grid">
+                            <label for="messageId">ID
+                                <input id="messageId" placeholder="demo-001">
+                            </label>
+                            <label for="messageType">Тип
+                                <select id="messageType"></select>
+                            </label>
+                            <label for="priority">Приоритет
+                                <select id="priority"></select>
+                            </label>
+                            <label for="flightNumber">Рейс
+                                <input id="flightNumber" placeholder="ESB900">
+                            </label>
+                            <label for="origin">Откуда
+                                <input id="origin" maxlength="4" placeholder="UUDD">
+                            </label>
+                            <label for="destination">Куда
+                                <input id="destination" maxlength="4" placeholder="ULLI">
+                            </label>
+                            <label for="operator">Оператор
+                                <input id="operator" placeholder="ESB Air">
+                            </label>
+                            <label for="registration">Борт
+                                <input id="registration" placeholder="RA-90000">
+                            </label>
+                            <label class="wide" for="payload">Payload JSON
+                                <textarea id="payload" spellcheck="false"></textarea>
+                            </label>
+                            <label class="wide" for="context">Context JSON
+                                <textarea id="context" spellcheck="false"></textarea>
+                            </label>
+                        </div>
+                        <div class="two-col">
+                            <button id="createButton" type="button">Создать</button>
+                            <button id="updateButton" type="button" class="secondary">Сохранить</button>
+                        </div>
+                        <button id="routeButton" type="button">Построить маршрут</button>
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <div class="panel-header">
+                        <h2>Маршрутизация</h2>
+                        <span id="decisionBadge" class="badge standard">Ожидает</span>
+                    </div>
+                    <div id="decisionPanel" class="panel-body stack">
+                        <div class="notice">Выберите сообщение в таблице. Здесь появятся контекст, ожидаемые факторы маршрута и результат после нажатия "Построить маршрут".</div>
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <div class="panel-header">
+                        <h2>Последние решения</h2>
+                        <span id="routesCount" class="badge">0</span>
+                    </div>
+                    <div id="recentRoutes" class="panel-body stack"></div>
+                </section>
+            </aside>
+        </main>
+    </div>
 
     <script>
-        const api = "/api/v1";
-        let selectedMessage = null;
+        const API_BASE = "/api/v1";
+        const MESSAGE_TYPES = ["FPL", "DLA", "CNL", "CHG", "MVT", "LDM", "CPM", "NOTAM", "METAR", "TAF", "SIGMET", "SLOT", "PAXLST", "BAG", "MAINT", "TECHLOG", "SECURITY", "AFTN"];
+        const PRIORITIES = ["NORMAL", "URGENT", "CRITICAL", "DISTRESS"];
+        const PHASES = ["preflight", "turnaround", "in_flight", "postflight"];
 
-        const status = (text) => {
-            document.getElementById("status").textContent = text;
+        const state = {
+            overview: null,
+            messages: [],
+            filteredMessages: [],
+            routes: [],
+            selectedMessage: null,
+            decision: null,
+            busy: false
         };
 
-        const request = async (path, options = {}) => {
-            const response = await fetch(`${api}${path}`, {
+        const dom = {};
+        const byId = (id) => document.getElementById(id);
+
+        function node(tag, className, text) {
+            const element = document.createElement(tag);
+            if (className) {
+                element.className = className;
+            }
+            if (text !== undefined && text !== null) {
+                element.textContent = String(text);
+            }
+            return element;
+        }
+
+        function option(value, text) {
+            const element = document.createElement("option");
+            element.value = value;
+            element.textContent = text;
+            return element;
+        }
+
+        function formatNumber(value) {
+            return new Intl.NumberFormat("ru-RU").format(Number(value || 0));
+        }
+
+        function formatTime(value) {
+            if (!value) {
+                return "-";
+            }
+            const date = new Date(value);
+            if (Number.isNaN(date.getTime())) {
+                return String(value);
+            }
+            return date.toLocaleString("ru-RU", {
+                day: "2-digit",
+                month: "2-digit",
+                hour: "2-digit",
+                minute: "2-digit"
+            });
+        }
+
+        function ttlLabel(seconds) {
+            const value = Number(seconds || 0);
+            if (value < 60) {
+                return `${value} sec`;
+            }
+            return `${value} sec (${Math.round(value / 60)} min)`;
+        }
+
+        function setStatus(text, type = "") {
+            dom.statusMessage.textContent = text;
+            dom.statusMessage.className = `toast ${type}`.trim();
+        }
+
+        function setBusy(isBusy) {
+            state.busy = isBusy;
+            [
+                dom.refreshButton,
+                dom.generateButton,
+                dom.importButton,
+                dom.createButton,
+                dom.updateButton,
+                dom.routeButton,
+                dom.resetButton
+            ].forEach((button) => {
+                button.disabled = isBusy;
+            });
+        }
+
+        async function apiRequest(path, options = {}) {
+            const response = await fetch(`${API_BASE}${path}`, {
                 headers: {"Content-Type": "application/json"},
                 ...options
             });
             if (!response.ok) {
-                const body = await response.text();
-                throw new Error(`${response.status}: ${body}`);
+                let detail = await response.text();
+                try {
+                    const parsed = JSON.parse(detail);
+                    detail = parsed.detail || detail;
+                } catch (error) {
+                    // Keep original response text.
+                }
+                throw new Error(`${response.status}: ${detail}`);
             }
             return response.json();
-        };
+        }
 
-        const readJson = (id) => {
-            const value = document.getElementById(id).value.trim();
-            return value ? JSON.parse(value) : {};
-        };
-
-        const formMessage = () => ({
-            message_id: document.getElementById("messageId").value || `demo-${Date.now()}`,
-            message_type: document.getElementById("messageType").value.toUpperCase(),
-            priority: document.getElementById("priority").value.toUpperCase(),
-            origin_airport: document.getElementById("origin").value.toUpperCase(),
-            destination_airport: document.getElementById("destination").value.toUpperCase(),
-            flight_number: document.getElementById("flightNumber").value,
-            operator: document.getElementById("operator").value,
-            received_at: new Date().toISOString(),
-            payload: readJson("payload"),
-            aircraft_registration: document.getElementById("registration").value,
-            context: readJson("context")
-        });
-
-        const fillForm = (message) => {
-            selectedMessage = message;
-            document.getElementById("messageId").value = message.message_id;
-            document.getElementById("messageType").value = message.message_type;
-            document.getElementById("priority").value = message.priority;
-            document.getElementById("flightNumber").value = message.flight_number;
-            document.getElementById("origin").value = message.origin_airport;
-            document.getElementById("destination").value = message.destination_airport;
-            document.getElementById("operator").value = message.operator;
-            document.getElementById("registration").value = message.aircraft_registration || "";
-            document.getElementById("payload").value = JSON.stringify(message.payload, null, 2);
-            document.getElementById("context").value = JSON.stringify(message.context, null, 2);
-            document.querySelectorAll(".message").forEach((node) => {
-                node.classList.toggle("active", node.dataset.id === message.message_id);
-            });
-        };
-
-        const renderStats = (overview) => {
-            const stats = [
-                ["Сообщения", overview.total_messages],
-                ["Маршруты", overview.routed_messages],
-                ["Типы", Object.keys(overview.message_types).length],
-                ["Источники", Object.keys(overview.source_systems).length]
-            ];
-            document.getElementById("stats").innerHTML = stats.map(([label, value]) =>
-                `<div class="stat"><strong>${value}</strong><span>${label}</span></div>`
-            ).join("");
-        };
-
-        const renderMessages = (messages) => {
-            document.getElementById("messages").innerHTML = messages.map((message) => `
-                <article class="message" data-id="${message.message_id}">
-                    <div class="row">
-                        <strong>${message.message_type} ${message.flight_number}</strong>
-                        <span class="badge ${message.priority.toLowerCase()}">${message.priority}</span>
-                    </div>
-                    <div class="meta">${message.origin_airport} → ${message.destination_airport} · ${message.operator}</div>
-                    <div class="meta">${message.message_id}</div>
-                </article>
-            `).join("");
-            document.querySelectorAll(".message").forEach((node, index) => {
-                node.addEventListener("click", () => fillForm(messages[index]));
-            });
-            if (messages.length && !selectedMessage) {
-                fillForm(messages[0]);
+        function fillSelect(select, values, allLabel) {
+            select.replaceChildren();
+            if (allLabel) {
+                select.appendChild(option("", allLabel));
             }
-        };
+            values.forEach((value) => select.appendChild(option(value, value)));
+        }
 
-        const renderRoutes = (routes) => {
-            document.getElementById("routes").innerHTML = routes.map((route) => `
-                <article class="decision">
-                    <div class="row">
-                        <strong>${route.priority_channel}</strong>
-                        <span class="badge">${route.ttl_seconds}s</span>
-                    </div>
-                    <div class="meta">${route.route_key}</div>
-                    <div class="meta">${route.destinations.join(", ")}</div>
-                </article>
-            `).join("");
-        };
+        function unique(values) {
+            return [...new Set(values.filter(Boolean))].sort();
+        }
 
-        const loadAll = async () => {
-            const params = new URLSearchParams({
-                limit: "80",
-                message_type: document.getElementById("typeFilter").value,
-                priority: document.getElementById("priorityFilter").value,
-                airport: document.getElementById("airportFilter").value
+        function initControls() {
+            [
+                "apiDot", "apiStatus", "datasetStatus", "topCounts", "lastUpdated",
+                "refreshButton", "generateButton", "importButton", "searchFilter",
+                "typeFilter", "priorityFilter", "airportFilter", "sourceFilter",
+                "phaseFilter", "statusMessage", "statGrid", "priorityBars",
+                "sourceChips", "queueMeta", "selectedBadge", "messageRows",
+                "emptyMessages", "resetButton", "messageId", "messageType",
+                "priority", "flightNumber", "origin", "destination", "operator",
+                "registration", "payload", "context", "createButton", "updateButton",
+                "routeButton", "decisionBadge", "decisionPanel", "routesCount",
+                "recentRoutes"
+            ].forEach((id) => {
+                dom[id] = byId(id);
             });
-            const [overview, messages, routes] = await Promise.all([
-                request("/aviation/overview"),
-                request(`/aviation/messages?${params}`),
-                request("/aviation/routes?limit=20")
-            ]);
-            renderStats(overview);
-            renderMessages(messages);
-            renderRoutes(routes);
-            status("Готово");
-        };
 
-        document.getElementById("refresh").addEventListener("click", loadAll);
-        document.getElementById("typeFilter").addEventListener("change", loadAll);
-        document.getElementById("priorityFilter").addEventListener("change", loadAll);
-        document.getElementById("airportFilter").addEventListener("input", () => setTimeout(loadAll, 150));
+            fillSelect(dom.typeFilter, MESSAGE_TYPES, "Все типы");
+            fillSelect(dom.priorityFilter, PRIORITIES, "Все приоритеты");
+            fillSelect(dom.phaseFilter, PHASES, "Все фазы");
+            fillSelect(dom.messageType, MESSAGE_TYPES, null);
+            fillSelect(dom.priority, PRIORITIES, null);
+            resetForm();
 
-        document.getElementById("generate").addEventListener("click", async () => {
-            status("Генерация");
-            await request("/aviation/synthetic/generate?count=320&seed=42&include_real_data=true", {method: "POST"});
-            selectedMessage = null;
-            await loadAll();
-        });
+            dom.refreshButton.addEventListener("click", loadAll);
+            dom.generateButton.addEventListener("click", generateDataset);
+            dom.importButton.addEventListener("click", importRealData);
+            dom.createButton.addEventListener("click", createMessage);
+            dom.updateButton.addEventListener("click", updateMessage);
+            dom.routeButton.addEventListener("click", routeSelected);
+            dom.resetButton.addEventListener("click", resetForm);
 
-        document.getElementById("importReal").addEventListener("click", async () => {
-            status("Импорт");
-            await request("/aviation/real/import", {method: "POST"});
-            selectedMessage = null;
-            await loadAll();
-        });
+            dom.typeFilter.addEventListener("change", loadAll);
+            dom.priorityFilter.addEventListener("change", loadAll);
+            dom.sourceFilter.addEventListener("change", applyClientFilters);
+            dom.phaseFilter.addEventListener("change", applyClientFilters);
+            dom.searchFilter.addEventListener("input", debounce(applyClientFilters, 220));
+            dom.airportFilter.addEventListener("input", debounce(() => {
+                dom.airportFilter.value = dom.airportFilter.value.toUpperCase();
+                loadAll();
+            }, 260));
 
-        document.getElementById("createMessage").addEventListener("click", async () => {
-            status("POST");
-            const created = await request("/aviation/messages", {
-                method: "POST",
-                body: JSON.stringify(formMessage())
+            [dom.origin, dom.destination].forEach((input) => {
+                input.addEventListener("input", () => {
+                    input.value = input.value.toUpperCase();
+                });
             });
-            fillForm(created);
-            await loadAll();
-        });
+        }
 
-        document.getElementById("updateMessage").addEventListener("click", async () => {
-            const message = formMessage();
-            status("UPDATE");
-            const updated = await request(`/aviation/messages/${encodeURIComponent(message.message_id)}`, {
-                method: "PUT",
-                body: JSON.stringify(message)
+        function debounce(callback, delay) {
+            let handle;
+            return (...args) => {
+                clearTimeout(handle);
+                handle = window.setTimeout(() => callback(...args), delay);
+            };
+        }
+
+        async function loadAll() {
+            setBusy(true);
+            setStatus("Загрузка данных", "loading");
+            try {
+                const params = new URLSearchParams({
+                    limit: "300",
+                    message_type: dom.typeFilter.value,
+                    priority: dom.priorityFilter.value,
+                    airport: dom.airportFilter.value.trim().toUpperCase()
+                });
+                const [overview, messages, routes] = await Promise.all([
+                    apiRequest("/aviation/overview"),
+                    apiRequest(`/aviation/messages?${params.toString()}`),
+                    apiRequest("/aviation/routes?limit=80")
+                ]);
+                state.overview = overview;
+                state.messages = messages;
+                state.routes = routes;
+                syncDynamicFilters();
+                applyClientFilters();
+                renderOverview();
+                renderRoutes();
+                dom.apiDot.className = "status-dot ok";
+                dom.apiStatus.textContent = "API online";
+                dom.datasetStatus.textContent = "SQLite dataset ready";
+                dom.lastUpdated.textContent = new Date().toLocaleTimeString("ru-RU", {hour: "2-digit", minute: "2-digit", second: "2-digit"});
+                setStatus("Готово", "success");
+            } catch (error) {
+                dom.apiDot.className = "status-dot error";
+                dom.apiStatus.textContent = "API error";
+                setStatus(readableError(error), "error");
+            } finally {
+                setBusy(false);
+            }
+        }
+
+        function syncDynamicFilters() {
+            const previousSource = dom.sourceFilter.value;
+            const sources = unique(state.messages.map((message) => message.context?.source_system || "unknown"));
+            fillSelect(dom.sourceFilter, sources, "Все источники");
+            if (sources.includes(previousSource)) {
+                dom.sourceFilter.value = previousSource;
+            }
+        }
+
+        function applyClientFilters() {
+            const search = dom.searchFilter.value.trim().toLowerCase();
+            const source = dom.sourceFilter.value;
+            const phase = dom.phaseFilter.value;
+            state.filteredMessages = state.messages.filter((message) => {
+                const text = [
+                    message.message_id,
+                    message.message_type,
+                    message.flight_number,
+                    message.operator,
+                    message.origin_airport,
+                    message.destination_airport,
+                    message.payload?.event,
+                    message.context?.source_system
+                ].filter(Boolean).join(" ").toLowerCase();
+                if (search && !text.includes(search)) {
+                    return false;
+                }
+                if (source && (message.context?.source_system || "unknown") !== source) {
+                    return false;
+                }
+                if (phase && message.context?.flight_phase !== phase) {
+                    return false;
+                }
+                return true;
             });
-            fillForm(updated);
-            await loadAll();
-        });
+            renderMessages();
+        }
 
-        document.getElementById("routeSelected").addEventListener("click", async () => {
-            const messageId = document.getElementById("messageId").value;
-            status("Маршрутизация");
-            const decision = await request(`/aviation/messages/${encodeURIComponent(messageId)}/route`, {method: "POST"});
-            document.getElementById("decision").textContent = JSON.stringify(decision, null, 2);
-            await loadAll();
-        });
+        function renderOverview() {
+            const overview = state.overview || {};
+            const stats = [
+                ["Сообщения", overview.total_messages || 0],
+                ["Маршруты", overview.routed_messages || 0],
+                ["Типы", Object.keys(overview.message_types || {}).length],
+                ["Источники", Object.keys(overview.source_systems || {}).length]
+            ];
+            dom.statGrid.replaceChildren(...stats.map(([label, value]) => {
+                const card = node("article", "stat");
+                card.appendChild(node("strong", null, formatNumber(value)));
+                card.appendChild(node("span", null, label));
+                return card;
+            }));
+            dom.topCounts.textContent = `${formatNumber(overview.total_messages || 0)} messages / ${formatNumber(overview.routed_messages || 0)} routes`;
+            renderPriorityBars(overview.priorities || {});
+            renderSourceChips(overview.source_systems || {});
+        }
 
-        loadAll().catch((error) => status(error.message));
+        function renderPriorityBars(priorities) {
+            const entries = Object.entries(priorities);
+            const max = Math.max(...entries.map(([, count]) => Number(count)), 1);
+            dom.priorityBars.replaceChildren();
+            if (!entries.length) {
+                dom.priorityBars.appendChild(node("div", "muted small", "Нет данных"));
+                return;
+            }
+            entries.forEach(([name, count]) => {
+                const row = node("div", "bar-row");
+                row.appendChild(node("span", "strong", name));
+                const track = node("div", "bar-track");
+                const fill = node("div", "bar-fill");
+                fill.style.width = `${Math.max(8, (Number(count) / max) * 100)}%`;
+                if (name === "URGENT") fill.style.background = "var(--warning)";
+                if (name === "CRITICAL") fill.style.background = "var(--critical)";
+                if (name === "DISTRESS") fill.style.background = "var(--danger)";
+                track.appendChild(fill);
+                row.appendChild(track);
+                row.appendChild(node("span", "muted", count));
+                dom.priorityBars.appendChild(row);
+            });
+        }
+
+        function renderSourceChips(sources) {
+            const entries = Object.entries(sources);
+            dom.sourceChips.replaceChildren();
+            if (!entries.length) {
+                dom.sourceChips.appendChild(node("span", "muted small", "Нет данных"));
+                return;
+            }
+            entries.slice(0, 12).forEach(([name, count]) => {
+                dom.sourceChips.appendChild(node("span", "chip", `${name}: ${count}`));
+            });
+        }
+
+        function renderMessages() {
+            const routeIds = new Set(state.routes.map((route) => route.message_id));
+            dom.messageRows.replaceChildren();
+            dom.emptyMessages.hidden = state.filteredMessages.length > 0;
+            dom.queueMeta.textContent = `${state.filteredMessages.length} из ${state.messages.length} загруженных`;
+            state.filteredMessages.forEach((message) => {
+                const tr = document.createElement("tr");
+                if (state.selectedMessage?.message_id === message.message_id) {
+                    tr.className = "active";
+                }
+                tr.tabIndex = 0;
+                tr.setAttribute("role", "button");
+                tr.setAttribute("aria-label", `Выбрать сообщение ${message.message_type} ${message.flight_number}`);
+                tr.addEventListener("click", () => selectMessage(message));
+                tr.addEventListener("keydown", (event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        selectMessage(message);
+                    }
+                });
+
+                tr.appendChild(cell(badge(message.priority, message.priority.toLowerCase())));
+                tr.appendChild(cell(node("span", "strong", message.message_type)));
+                tr.appendChild(cell(node("span", null, message.flight_number || "-")));
+                tr.appendChild(cell(node("span", "mono", `${message.origin_airport || "ZZZZ"} > ${message.destination_airport || "ZZZZ"}`)));
+                tr.appendChild(cell(operatorBlock(message)));
+                tr.appendChild(cell(node("span", null, message.payload?.event || "-")));
+                tr.appendChild(cell(badge(routeIds.has(message.message_id) ? "routed" : "unrouted", routeIds.has(message.message_id) ? "routed" : "unrouted")));
+                dom.messageRows.appendChild(tr);
+            });
+            updateSelectedBadge();
+        }
+
+        function cell(content) {
+            const td = document.createElement("td");
+            td.appendChild(content);
+            return td;
+        }
+
+        function operatorBlock(message) {
+            const wrap = node("div", "key-value");
+            wrap.appendChild(node("span", null, message.context?.source_system || "unknown"));
+            wrap.appendChild(node("span", null, message.operator || "-"));
+            return wrap;
+        }
+
+        function badge(text, kind) {
+            return node("span", `badge ${kind || ""}`.trim(), text);
+        }
+
+        function selectMessage(message) {
+            state.selectedMessage = message;
+            state.decision = state.routes.find((route) => route.message_id === message.message_id) || null;
+            fillForm(message);
+            renderMessages();
+            renderDecision();
+            setStatus(`Выбрано сообщение ${message.message_type} ${message.flight_number}`, "success");
+        }
+
+        function updateSelectedBadge() {
+            if (!state.selectedMessage) {
+                dom.selectedBadge.className = "badge unrouted";
+                dom.selectedBadge.textContent = "Нет выбора";
+                return;
+            }
+            dom.selectedBadge.className = `badge ${state.selectedMessage.priority.toLowerCase()}`;
+            dom.selectedBadge.textContent = state.selectedMessage.message_id;
+        }
+
+        function fillForm(message) {
+            dom.messageId.value = message.message_id || "";
+            dom.messageType.value = MESSAGE_TYPES.includes(message.message_type) ? message.message_type : "AFTN";
+            dom.priority.value = PRIORITIES.includes(message.priority) ? message.priority : "NORMAL";
+            dom.flightNumber.value = message.flight_number || "";
+            dom.origin.value = message.origin_airport || "";
+            dom.destination.value = message.destination_airport || "";
+            dom.operator.value = message.operator || "";
+            dom.registration.value = message.aircraft_registration || "";
+            dom.payload.value = JSON.stringify(message.payload || {}, null, 2);
+            dom.context.value = JSON.stringify(message.context || {}, null, 2);
+        }
+
+        function resetForm() {
+            const id = `demo-${Date.now()}`;
+            fillForm({
+                message_id: id,
+                message_type: "MVT",
+                priority: "NORMAL",
+                origin_airport: "UUDD",
+                destination_airport: "ULLI",
+                flight_number: "ESB900",
+                operator: "ESB Air",
+                aircraft_registration: "RA-90000",
+                payload: {"event": "operational_update"},
+                context: {"flight_phase": "turnaround", "weather_severity": 0, "source_system": "DEMO", "schema_version": "1.0"}
+            });
+            state.selectedMessage = null;
+            state.decision = null;
+            renderMessages();
+            renderDecision();
+            setStatus("Форма подготовлена для нового сообщения");
+        }
+
+        function readJsonField(element, label) {
+            try {
+                return element.value.trim() ? JSON.parse(element.value) : {};
+            } catch (error) {
+                element.focus();
+                throw new Error(`${label}: некорректный JSON (${error.message})`);
+            }
+        }
+
+        function formMessage() {
+            const payload = readJsonField(dom.payload, "Payload");
+            const context = readJsonField(dom.context, "Context");
+            return {
+                message_id: dom.messageId.value.trim() || `demo-${Date.now()}`,
+                message_type: dom.messageType.value.toUpperCase(),
+                priority: dom.priority.value.toUpperCase(),
+                origin_airport: dom.origin.value.trim().toUpperCase(),
+                destination_airport: dom.destination.value.trim().toUpperCase(),
+                flight_number: dom.flightNumber.value.trim(),
+                operator: dom.operator.value.trim(),
+                received_at: state.selectedMessage?.received_at || new Date().toISOString(),
+                payload,
+                aircraft_registration: dom.registration.value.trim() || null,
+                context
+            };
+        }
+
+        async function createMessage() {
+            try {
+                setBusy(true);
+                setStatus("Создание сообщения", "loading");
+                const message = formMessage();
+                const created = await apiRequest("/aviation/messages", {
+                    method: "POST",
+                    body: JSON.stringify(message)
+                });
+                state.selectedMessage = created;
+                await loadAll();
+                selectMessage(created);
+                setStatus("Сообщение создано", "success");
+            } catch (error) {
+                setStatus(readableError(error), "error");
+            } finally {
+                setBusy(false);
+            }
+        }
+
+        async function updateMessage() {
+            try {
+                setBusy(true);
+                setStatus("Сохранение сообщения", "loading");
+                const message = formMessage();
+                const updated = await apiRequest(`/aviation/messages/${encodeURIComponent(message.message_id)}`, {
+                    method: "PUT",
+                    body: JSON.stringify(message)
+                });
+                state.selectedMessage = updated;
+                await loadAll();
+                selectMessage(updated);
+                setStatus("Сообщение обновлено", "success");
+            } catch (error) {
+                setStatus(readableError(error), "error");
+            } finally {
+                setBusy(false);
+            }
+        }
+
+        async function routeSelected() {
+            try {
+                setBusy(true);
+                setStatus("Построение маршрута", "loading");
+                const messageId = dom.messageId.value.trim();
+                if (!messageId) {
+                    throw new Error("Укажите ID сообщения для маршрутизации");
+                }
+                const decision = await apiRequest(`/aviation/messages/${encodeURIComponent(messageId)}/route`, {method: "POST"});
+                state.decision = decision;
+                await loadAll();
+                const refreshed = state.messages.find((message) => message.message_id === messageId);
+                if (refreshed) {
+                    state.selectedMessage = refreshed;
+                }
+                renderDecision();
+                renderMessages();
+                setStatus("Маршрут построен и сохранен", "success");
+            } catch (error) {
+                setStatus(readableError(error), "error");
+            } finally {
+                setBusy(false);
+            }
+        }
+
+        async function generateDataset() {
+            if (!window.confirm("Пересобрать демонстрационную базу? Текущие сообщения и решения маршрутизации будут заменены.")) {
+                return;
+            }
+            try {
+                setBusy(true);
+                setStatus("Генерация synthetic + real-data", "loading");
+                const result = await apiRequest("/aviation/synthetic/generate?count=320&seed=42&include_real_data=true", {method: "POST"});
+                state.selectedMessage = null;
+                state.decision = null;
+                await loadAll();
+                setStatus(`База пересобрана: ${result.inserted} сообщений`, "success");
+            } catch (error) {
+                setStatus(readableError(error), "error");
+            } finally {
+                setBusy(false);
+            }
+        }
+
+        async function importRealData() {
+            try {
+                setBusy(true);
+                setStatus("Импорт FAA/AWC данных", "loading");
+                const result = await apiRequest("/aviation/real/import", {method: "POST"});
+                await loadAll();
+                setStatus(`Импорт завершен: ${result.inserted} сообщений в dataset`, "success");
+            } catch (error) {
+                setStatus(readableError(error), "error");
+            } finally {
+                setBusy(false);
+            }
+        }
+
+        function renderDecision() {
+            const decision = state.decision;
+            dom.decisionPanel.replaceChildren();
+            if (!decision) {
+                dom.decisionBadge.className = "badge standard";
+                dom.decisionBadge.textContent = state.selectedMessage ? "Готово к расчету" : "Ожидает";
+                dom.decisionPanel.appendChild(buildPendingDecision());
+                return;
+            }
+            dom.decisionBadge.className = `badge ${decision.priority_channel}`;
+            dom.decisionBadge.textContent = decision.priority_channel;
+
+            const card = node("article", "decision-card");
+            const header = node("div", "decision-header");
+            header.appendChild(badge(decision.priority_channel, decision.priority_channel));
+            header.appendChild(node("span", "muted small", ttlLabel(decision.ttl_seconds)));
+            card.appendChild(header);
+            card.appendChild(keyValue("Route key", decision.route_key));
+            card.appendChild(keyValue("Message ID", decision.message_id));
+            card.appendChild(keyValue("TTL", ttlLabel(decision.ttl_seconds)));
+            card.appendChild(sectionList("Получатели", decision.destinations, "chip destination"));
+            card.appendChild(sectionList("Почему такой маршрут", decision.reasons.map(explainReason), "chip reason"));
+            dom.decisionPanel.appendChild(card);
+        }
+
+        function buildPendingDecision() {
+            if (!state.selectedMessage) {
+                return node("div", "notice", "Выберите сообщение в таблице. Здесь появятся контекст, ожидаемые факторы маршрута и результат после нажатия \"Построить маршрут\".");
+            }
+
+            const message = state.selectedMessage;
+            const card = node("article", "decision-card");
+            const header = node("div", "decision-header");
+            header.appendChild(badge(message.priority, message.priority.toLowerCase()));
+            header.appendChild(node("span", "muted small", "Маршрут еще не построен"));
+            card.appendChild(header);
+            card.appendChild(keyValue("Выбранное сообщение", `${message.message_type} ${message.flight_number || ""}`.trim()));
+            card.appendChild(keyValue("Route", `${message.origin_airport || "ZZZZ"} > ${message.destination_airport || "ZZZZ"}`));
+            card.appendChild(sectionList("Контекст, который будет учтен", pendingFactors(message), "chip"));
+            card.appendChild(node("div", "notice", "Нажмите \"Построить маршрут\" ниже формы сообщения, чтобы сохранить routing decision и увидеть получателей, TTL и причины."));
+            return card;
+        }
+
+        function pendingFactors(message) {
+            const factors = [`type:${message.message_type}`, `priority:${message.priority}`];
+            if (message.origin_airport) factors.push(`origin:${message.origin_airport}`);
+            if (message.destination_airport) factors.push(`destination:${message.destination_airport}`);
+            if (message.context?.flight_phase) factors.push(`phase:${message.context.flight_phase}`);
+            if (message.context?.source_system) factors.push(`source:${message.context.source_system}`);
+            if (message.context?.weather_severity !== undefined) factors.push(`weather:${message.context.weather_severity}`);
+            if (message.payload?.event) factors.push(`event:${message.payload.event}`);
+            return factors;
+        }
+
+        function keyValue(label, value) {
+            const wrap = node("div", "key-value");
+            wrap.appendChild(node("span", null, label));
+            wrap.appendChild(node("span", "mono", value || "-"));
+            return wrap;
+        }
+
+        function sectionList(title, values, className) {
+            const wrap = node("div", "stack");
+            wrap.appendChild(node("div", "muted small strong", title));
+            const chips = node("div", "chip-wrap");
+            values.forEach((value) => chips.appendChild(node("span", className, value)));
+            wrap.appendChild(chips);
+            return wrap;
+        }
+
+        function explainReason(reason) {
+            const text = String(reason || "");
+            if (text.startsWith("type:")) return `Тип сообщения ${text.slice(5)} определил базовый маршрут`;
+            if (text.startsWith("hub_airport:")) return `Аэропорт-хаб ${text.slice(12)} добавил hub control`;
+            if (text === "phase:turnaround") return "Фаза turnaround добавила ground handling и turnaround control";
+            if (text === "phase:in_flight") return "Фаза in_flight добавила flight watch и dispatch";
+            if (text.startsWith("weather_severity:")) return `Погодная опасность ${text.slice(17)} включила safety/operations escalation`;
+            if (text.startsWith("priority:distress")) return "Приоритет DISTRESS включил аварийный канал и TTL 60 секунд";
+            if (text.startsWith("priority:")) return `Приоритет ${text.slice(9).toUpperCase()} добавил supervisor и priority queue`;
+            if (text.startsWith("security_event:")) return `Security event ${text.slice(15)} добавил security routing`;
+            if (text.startsWith("safety_event:")) return `Safety event ${text.slice(13)} добавил emergency response`;
+            if (text.startsWith("regulatory_zone:")) return `Regulatory zone ${text.slice(16)} добавила compliance monitoring`;
+            return text;
+        }
+
+        function renderRoutes() {
+            dom.routesCount.textContent = state.routes.length;
+            dom.recentRoutes.replaceChildren();
+            if (!state.routes.length) {
+                dom.recentRoutes.appendChild(node("div", "notice", "Сохраненных решений пока нет."));
+                return;
+            }
+            state.routes.slice(0, 8).forEach((route) => {
+                const card = node("article", "recent-route");
+                const header = node("div", "recent-route-header");
+                header.appendChild(badge(route.priority_channel, route.priority_channel));
+                header.appendChild(node("span", "muted small", ttlLabel(route.ttl_seconds)));
+                card.appendChild(header);
+                card.appendChild(node("div", "mono small", route.route_key));
+                card.appendChild(node("div", "muted small", `${route.destinations.length} получателей · ${formatTime(route.created_at)}`));
+                dom.recentRoutes.appendChild(card);
+            });
+        }
+
+        function readableError(error) {
+            const message = error?.message || String(error);
+            return message.replaceAll("{", "").replaceAll("}", "");
+        }
+
+        initControls();
+        loadAll();
     </script>
 </body>
 </html>

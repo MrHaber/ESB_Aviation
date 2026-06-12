@@ -49,8 +49,13 @@ class RealAviationDataImporter:
     def fetch(self) -> List[AviationMessage]:
         messages = self.official_examples()
         live_weather = self._fetch_awc_product("metar") + self._fetch_awc_product("taf")
-        messages.extend(live_weather or self.bundled_awc_snapshot())
-        return messages
+        snapshot_weather = self.bundled_awc_snapshot()
+        expected_weather_count = len(self.airports) * 2
+        weather_messages = live_weather
+        if len(live_weather) < expected_weather_count:
+            weather_messages = self._dedupe_messages([*live_weather, *snapshot_weather])
+        messages.extend(weather_messages or snapshot_weather)
+        return self._dedupe_messages(messages)
 
     def bundled_awc_snapshot(self) -> List[AviationMessage]:
         if not BUNDLED_AWC_SNAPSHOT.exists():
@@ -72,6 +77,12 @@ class RealAviationDataImporter:
             if isinstance(row, dict)
         )
         return messages
+
+    def _dedupe_messages(self, messages: Iterable[AviationMessage]) -> List[AviationMessage]:
+        by_id = {}
+        for message in messages:
+            by_id[message.message_id] = message
+        return list(by_id.values())
 
     def official_examples(self) -> List[AviationMessage]:
         received_at = datetime.now(timezone.utc)

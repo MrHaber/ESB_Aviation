@@ -16,7 +16,7 @@ class Settings(BaseSettings):
 
     PLUGINS_DIR: str = os.getenv("PLUGINS_DIR", "app/plugins").strip()
 
-    LOG_DIR: str = os.getenv("app/logs", "app/logs").strip()
+    LOG_DIR: str = os.getenv("LOG_DIR", os.getenv("app/logs", "app/logs")).strip()
 
     AVIATION_DB_PATH: str = os.getenv(
         "AVIATION_DB_PATH",

@@ -36,7 +36,6 @@ app = FastAPI()
 #consumer.subscribe(['app_logs'])
 
 templates_dir = Path(__file__).parent.parent / "templates"
-# TODO: Допилить систему логирования
 setup_logging()
 #app.add_middleware(MetricsMiddleware)
 app.add_middleware(LoggingMiddleware)
