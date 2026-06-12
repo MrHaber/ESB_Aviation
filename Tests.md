@@ -1,9 +1,8 @@
-# Tests
+# Результаты Unit тестов
 
-Дата проверки: 2026-05-11.
 
 ## Команда запуска
-
+Windows
 ```powershell
 python -B -m unittest discover -s tests -v
 ```
@@ -143,8 +142,3 @@ create_trigger({"interval": "5 minutes"})
 create_trigger({"run_at": "2099-01-01T12:00:00"}, moscow_time=True)
 -> DateTrigger with run_date=2099-01-01 09:00:00+00:00
 ```
-
-## Изменения, найденные тестами
-
-- Исправлена генерация JWT: теперь `create_jwt_token` принимает payload как с `username`, так и с `sub`, что соответствует `/api/v1/auth/token` и LDAP callback.
-- Исправлено определение runnable-плагинов: `PluginManager.is_runnable` теперь проверяет, переопределены ли `start/stop` на уровне класса плагина, а не сравнивает bound method с методом базового класса.
